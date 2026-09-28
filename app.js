@@ -130,6 +130,10 @@ const fromHash = location.hash.length > 1 && find(decodeURIComponent(location.ha
 if (fromHash) { S.T = L.days; S.playing = false; act.select(fromHash); }
 ui.setPlaying(S.playing);
 addEventListener('keydown', e => { if (e.key === 'Escape' && (S.selected || S.touring)) act.select(null); });
+addEventListener('hashchange', () => {  // a report link pasted into an open page
+  const r = location.hash.length > 1 && find(decodeURIComponent(location.hash.slice(1)));
+  if (r && r !== S.selected) { S.T = L.days; S.playing = false; act.select(r); } else if (!r && S.selected) act.select(null);
+});
 let prev = performance.now();
 const loop = now => {
   const dt = Math.min(0.05, (now - prev) / 1000); prev = now;
