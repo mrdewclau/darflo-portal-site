@@ -1,0 +1,513 @@
+/* Additions for the Google-map version: needles, filters, tabs, town facts, phone layout. */
+#stage{background:#e9e4d8}
+#map{width:100%;height:100%}
+.nomap,.mapmsg{position:fixed;left:calc(var(--pw) + 40px);top:90px;max-width:420px;padding:14px 16px;background:#f3f0e8;border:1px solid #111;font:500 14px/1.45 var(--font-body);z-index:3}
+.mapmsg b{display:block;font:700 11px/1.3 var(--font-body);letter-spacing:.12em;text-transform:uppercase;margin-bottom:6px;color:#c8102e}
+
+/* ——— needles: HTML pins positioned by one Google OverlayView. Zoomed out = clean dots; zoomed in = needles. */
+.pinlayer{position:absolute;left:0;top:0}
+.pinw{position:absolute;left:0;top:0;width:0;height:0}
+#map{--zk:1;--hk:1}
+#map[data-z="far"]{--zk:0;--hk:.8}
+#map[data-z="mid"]{--zk:.7;--hk:1}
+#map[data-z="near"]{--zk:1.2;--hk:1.15}
+.pin{position:absolute;left:0;top:0;display:flex;flex-direction:column;align-items:center;cursor:pointer;--c:#111;--h:36px;
+  transform-origin:50% 100%;transform:translate(-50%,-100%) scale(0);transition:transform .45s cubic-bezier(.3,1.6,.5,1),opacity .3s;opacity:0}
+.pin.on{transform:translate(-50%,-100%) scale(1);opacity:1}
+.pin-head{width:calc(15px * var(--hk));height:calc(15px * var(--hk));border-radius:50%;background:var(--c);flex:none;
+  box-shadow:0 0 0 2px #f3f0e8,0 0 0 3px #111,0 2px 5px rgba(0,0,0,.35);transition:transform .2s;position:relative;z-index:1}
+.pin.ev-call .pin-head{background:#f3f0e8;box-shadow:inset 0 0 0 3.5px var(--c),0 0 0 1.5px #111,0 2px 4px rgba(0,0,0,.25)}
+.pin.ev-tip .pin-head{background:#f3f0e8;box-shadow:none;border:2.5px dashed var(--c)}
+.pin.fatal .pin-head{width:calc(19px * var(--hk));height:calc(19px * var(--hk));box-shadow:0 0 0 2px #f3f0e8,0 0 0 3px #111,0 0 0 6px #c8102e,0 2px 5px rgba(0,0,0,.35)}
+.pin-stalk{width:2px;height:calc(var(--h) * var(--zk));background:#111;margin-top:-1px;flex:none}
+.pin-foot{width:12px;height:4px;border-radius:50%;background:rgba(17,17,17,.35);margin-top:-2px;flex:none}
+#map[data-z="far"] .pin-foot{display:none}
+.pin-lbl{position:absolute;bottom:calc(100% + 10px);left:50%;transform:translateX(-50%);white-space:nowrap;display:flex;gap:6px;align-items:baseline;
+  font:600 13px/1.15 var(--font-body);color:#111;background:#f3f0e8;border:1px solid #111;box-shadow:0 2px 0 #111;padding:6px 10px;opacity:0;pointer-events:none;transition:opacity .2s}
+.pin-lbl b{font:700 11px/1 var(--font-body);color:#c8102e;font-variant-numeric:tabular-nums}
+.pin:hover .pin-head,.pin.hot .pin-head,.pin.sel .pin-head{transform:scale(1.35)}
+.pin:hover .pin-lbl,.pin.hot .pin-lbl,.pin.sel .pin-lbl{opacity:1}
+.pin.dim{opacity:.2}
+.pin:focus-visible{outline:2px solid #c8102e;outline-offset:3px}
+/* cluster badge: a numbered ink disc; the caption shows on hover */
+.cty{position:absolute;left:0;top:0;width:0;height:0;pointer-events:none}
+.cty span{position:absolute;transform:translate(-50%,-50%);white-space:nowrap;font:italic 400 22px/1 "Instrument Serif",serif;color:#4f4b44;opacity:.75;letter-spacing:.01em}
+#map[data-z="near"] .cty{display:none}
+.clw{position:absolute;left:0;top:0;width:0;height:0;z-index:2000}
+.clb{position:absolute;left:0;top:0;transform:translate(-50%,-50%);display:flex;align-items:center;justify-content:center;
+  width:calc(34px * var(--n));height:calc(34px * var(--n));border-radius:50%;border:2px solid #f3f0e8;background:#111;color:#f3f0e8;
+  box-shadow:0 0 0 1px #111,0 3px 8px rgba(0,0,0,.35);cursor:pointer;padding:0}
+.clb b{font:400 calc(19px * var(--n))/1 "Instrument Serif",serif}
+.clb i{position:absolute;right:-3px;top:-3px;width:11px;height:11px;border-radius:50%;background:#c8102e;border:2px solid #f3f0e8}
+.clb span{position:absolute;top:calc(100% + 6px);left:50%;transform:translateX(-50%);white-space:nowrap;font:700 10.5px/1 var(--font-body);
+  letter-spacing:.08em;text-transform:uppercase;color:#111;background:#f3f0e8;border:1px solid #111;padding:5px 7px;opacity:0;transition:opacity .2s;pointer-events:none}
+.clb:hover span,.clb:focus-visible span{opacity:1}
+.clb:hover{background:#c8102e}
+.clb:focus-visible{outline:2px solid #c8102e;outline-offset:3px}
+@media (prefers-reduced-motion:reduce){.pin{transition:none}.fi.in{animation:none!important}}
+
+/* ——— panel: one scrolling column — masthead, headline, "what happened", "how sure", list, about */
+html,body{height:100%;overflow:hidden;overscroll-behavior:none}
+.lede.panel{display:flex;flex-direction:column;overflow:hidden}
+.lede.panel>*{flex:none}
+.panel .feed,.panel .feed.filtered{flex:1 1 auto;min-height:0;display:flex;flex-direction:column;overflow:hidden;margin:0;padding-top:12px;border-top:1px solid #111}
+.fbody{flex:1 1 auto;min-height:0;overflow-y:auto;overscroll-behavior:contain;scrollbar-width:thin;scrollbar-color:#b9b2a3 transparent}
+.panel .flist,.panel .feed.filtered .flist{overflow:visible;flex:none}
+body.focus .panel .feed{padding-top:0;border-top:0}
+.mast{padding:14px 28px 12px;border-top:6px solid #111;border-bottom:1px solid #111;margin:0 0 20px}
+.panel .mast .kicker{margin:0;padding:0;border:0;font:700 11px/1.3 var(--font-body);letter-spacing:.14em;text-transform:uppercase;color:#111}
+.mast .dates{margin:5px 0 0;font:500 12.5px/1.3 var(--font-body);color:#4f4b44}
+.panel .dek{margin:0 0 20px}
+.blk{margin:0 28px;padding:14px 0 16px;border-top:1px solid #111}
+.blk-h{display:flex;justify-content:space-between;align-items:baseline;gap:10px;margin:0 0 8px;font:700 11px/1.2 var(--font-body);letter-spacing:.14em;text-transform:uppercase;color:#111}
+.blk-h small{font:400 11.5px/1.2 var(--font-body);letter-spacing:0;text-transform:none;color:#8d877b}
+.bars{list-style:none;margin:0;padding:0;display:grid;gap:0}
+.bar{width:100%;display:grid;grid-template-columns:16px 1fr auto;align-items:center;column-gap:10px;row-gap:6px;padding:7px 0;border:0;background:none;
+  text-align:left;cursor:pointer;color:#111;font:500 14px/1.2 var(--font-body)}
+.bar .sw{width:10px;height:10px;border-radius:50%;background:var(--c);justify-self:center}
+.bar .bn{font:400 26px/.9 "Instrument Serif",serif;font-variant-numeric:tabular-nums;text-align:right;min-width:2ch}
+.bar .bt{grid-column:2 / 4;height:5px;background:#e6e1d5;position:relative;margin-top:-2px}
+.bar .bf{position:absolute;left:0;top:0;bottom:0;width:0;background:var(--c);transition:width .35s}
+.bar[aria-pressed="false"]{opacity:.35}
+.bar[aria-pressed="false"] .bl{text-decoration:line-through}
+.bar:hover .bl{text-decoration:underline;text-underline-offset:3px}
+.bar:focus-visible{outline:2px solid #c8102e;outline-offset:2px}
+.glyph{width:14px;height:14px;border-radius:50%;justify-self:center}
+.glyph.solid{background:#111;box-shadow:0 0 0 1.5px #f3f0e8,0 0 0 2.5px #111}
+.glyph.hollow{background:#f3f0e8;box-shadow:inset 0 0 0 3px #111,0 0 0 1px #111}
+.glyph.fatal{background:#111;box-shadow:0 0 0 1.5px #f3f0e8,0 0 0 2.5px #111,0 0 0 5.5px #c8102e}
+/* panel footer bar: the list action on the left, the data note on the right */
+.aboutline{display:flex;align-items:center;justify-content:space-between;gap:12px;border-top:1px solid #111;padding:12px 28px}
+.aboutline .about-link{border:0;background:none;padding:0;margin-left:auto;font:600 12px/1 var(--font-body);color:#111;text-decoration:underline;text-underline-offset:3px;cursor:pointer}
+.aboutpop{position:fixed;left:calc(var(--pw) + 20px);bottom:90px;width:340px;background:#f3f0e8;border:1px solid #111;border-top:6px solid #111;padding:14px 18px 6px;z-index:6;
+  font:400 13px/1.5 var(--font-body);color:#2c2a26;box-shadow:0 3px 0 #111}
+.aboutpop h4{font:400 26px/1 "Instrument Serif",serif;margin:0 0 8px}
+.aboutpop .x{position:absolute;right:8px;top:6px;border:0;background:none;font:600 18px/1 var(--font-body);cursor:pointer}
+.aboutpop[hidden]{display:none}
+/* map key (bottom-right, above the timeline) */
+.mapkey{position:fixed;right:20px;bottom:92px;display:flex;flex-wrap:wrap;gap:8px 16px;align-items:center;max-width:calc(100vw - var(--pw) - 120px);
+  padding:9px 14px;background:#f3f0e8;border:1px solid #111;font:500 12px/1.2 var(--font-body);color:#111;z-index:3}
+.mapkey span,.mapkey label{display:inline-flex;align-items:center;gap:7px;white-space:nowrap}
+.mapkey .glyph{width:12px;height:12px;display:inline-block}
+.mapkey label{color:#4f4b44;cursor:pointer}.mapkey input{accent-color:#111;margin:0}
+
+/* ——— feed tabs, grouped lists */
+.tabs{display:flex;gap:0;margin:0 28px 6px;border:1px solid #111}
+.tabs button{flex:1;font:600 11px/1 var(--font-body);letter-spacing:.08em;text-transform:uppercase;padding:10px 6px;white-space:nowrap;border:0;background:#f3f0e8;color:#111;cursor:pointer}
+.tabs button+button{border-left:1px solid #111}
+.tabs button[aria-pressed="true"]{background:#111;color:#f3f0e8}
+.tabs em{font-style:normal;opacity:.6;margin-left:3px}
+.panel .fm{font:500 12px/1.2 var(--font-body);letter-spacing:0;text-transform:none;color:#6a655b}
+.panel .ft{font:600 12px/1 var(--font-body);letter-spacing:0;text-transform:none;padding:0}
+.grp{list-style:none;margin:10px 0 4px;padding:0 14px;font:700 10.5px/1.2 var(--font-body);letter-spacing:.1em;text-transform:uppercase;color:#6a655b}
+.fi .ftl small{display:block;font:400 12.5px/1.4 var(--font-body);color:#4f4b44;margin-top:3px}
+.ft-arrest{color:#111!important}.ft-tip{color:#8d877b!important}.ft-agency{color:#111!important}
+.fi.nopin{--c:#8d877b}
+.empty{padding:18px 28px;font:400 13px/1.5 var(--font-body);color:#4f4b44}
+
+/* ——— selected-incident extras */
+.fbar2 .share{font:600 11px/1 var(--font-body);letter-spacing:.08em;text-transform:uppercase;border:1px solid #111;background:#f3f0e8;padding:9px 10px;cursor:pointer}
+.fbar2 .share:hover{background:#111;color:#f3f0e8}
+.chip.ev{background:none;border:1px solid #111}
+.unk{font:400 13px/1.5 var(--font-body);color:#4f4b44;margin:16px 0 0;padding:10px 12px;border-left:3px solid #c8102e;background:#ebe6da}
+.unk b{display:block;font:700 10.5px/1.3 var(--font-body);letter-spacing:.1em;text-transform:uppercase;color:#111;margin-bottom:3px}
+.fi.big .fr{font-size:12.5px}
+.fi.big .ftl small{font-size:13px}
+
+/* ——— town facts card (area-level Census figures) */
+.towncard{position:fixed;right:20px;top:74px;width:300px;background:#f3f0e8;border:1px solid #111;border-top:6px solid #111;padding:14px 18px 16px;z-index:4;font:400 13.5px/1.45 var(--font-body)}
+.towncard h4{font:400 30px/1 "Instrument Serif",serif;margin:2px 0 10px}
+.towncard .x{position:absolute;right:8px;top:8px;border:0;background:none;font:600 18px/1 var(--font-body);cursor:pointer;color:#111}
+.towncard dl{display:grid;grid-template-columns:1fr auto;gap:6px 12px;margin:0}
+.towncard dt{color:#4f4b44}.towncard dd{margin:0;font-variant-numeric:tabular-nums;font-weight:600;text-align:right}
+.towncard p{margin:10px 0 0;font-size:11.5px;color:#6a655b}
+.towncard[hidden]{display:none}
+
+/* ——— tools (extent) */
+.tools .seg{flex-wrap:wrap}
+.tools .seg button{padding:10px 12px}
+
+/* ——— phone: panel becomes a bottom sheet under the map */
+@media (max-width:760px){
+  :root{--pw:0px}
+  .lede.panel{left:0;right:0;top:auto;bottom:0;width:100%;height:46vh;border-right:0;border-top:1px solid #111;transition:height .35s}
+  body.sheet-open .lede.panel{height:82vh}
+  .panel .kicker{padding:10px 18px 8px}
+  .panel>.kicker,.panel>.hl,.panel>.dek{padding:0 18px}
+  .panel .num{font-size:64px}.panel .unit{font-size:22px}
+  .panel .dek{display:none}
+  .panel .blk{display:none}
+  body.sheet-open .panel .blk{display:block}
+  .aboutline{padding:8px 18px}
+  .mapkey{right:10px;left:10px;bottom:calc(46vh + 60px);max-width:none;font-size:11px;padding:7px 10px}
+  body.sheet-open .mapkey{display:none}
+  .aboutpop{left:10px;right:10px;width:auto;bottom:calc(46vh + 10px)}
+  .tabs{margin:0 18px 6px}
+  .tl{left:0;right:0;bottom:46vh;padding:8px 12px;grid-template-columns:auto 1fr;gap:10px}
+  body.sheet-open .tl{display:none}
+  .tl .now{display:none}
+  .tools{top:10px;right:10px;left:10px;overflow-x:auto}
+  .tools .seg{flex-wrap:nowrap}
+  .towncard{top:auto;bottom:calc(46vh + 70px);right:10px;left:10px;width:auto}
+  .sheet-handle{display:block}
+  .mapmsg{left:12px;right:12px;top:60px}
+}
+.sheet-handle{display:none;width:100%;border:0;background:none;padding:8px 0 2px;cursor:pointer}
+.sheet-handle i{display:block;width:44px;height:4px;margin:0 auto;background:#111}
+
+body.focus .tabs{display:none}
+.panel .fdate{display:flex;flex-wrap:wrap;gap:4px 10px;font:600 13px/1.35 var(--font-body);letter-spacing:0;text-transform:none;color:#2c2a26}
+.panel .fdate em{font-weight:500;letter-spacing:0;color:#c8102e}
+
+/* ——— app shell sizing: keep the top compact so the list box gets room */
+.panel .hl{flex-direction:row;align-items:flex-end;gap:14px;margin:0 0 14px}
+.panel .num{font-size:clamp(72px,6.2vw,100px)}
+.panel .unit{padding-bottom:9px;font-size:clamp(22px,1.9vw,28px)}
+.blk{padding:12px 0 10px}
+.bar{padding:4px 0;row-gap:4px}
+.bar .bn{font-size:22px}
+.bar .bt{height:4px;margin-top:-1px}
+@media (max-height:900px){.panel .dek{display:none}.mast{margin-bottom:16px}}
+@media (max-height:700px){.panel .num{font-size:60px}.blk-h small{display:none}}
+
+/* ——— dive-in scenes (3D flyover / Street View) over the map area; the paper map stays underneath */
+.scene{position:fixed;left:calc(var(--pw) + 1px);right:0;top:0;bottom:77px;z-index:4;background:#111;animation:scenein .6s ease both}
+.scene[hidden]{display:none}
+@keyframes scenein{from{opacity:0}to{opacity:1}}
+.scene-3d,.scene-sv{position:absolute;inset:0}
+.scene-3d[hidden],.scene-sv[hidden]{display:none}
+.scene-3d gmp-map-3d{display:block;width:100%;height:100%}
+.scene-cap{position:absolute;z-index:3;left:20px;bottom:20px;max-width:430px;margin:0;background:#f3f0e8;border:1px solid #111;border-top:6px solid #111;
+  padding:10px 14px 9px;box-shadow:0 3px 0 #111;font:400 13.5px/1.45 var(--font-body);color:#2c2a26}
+.scene-cap .k{margin:0 0 4px;font:700 10.5px/1.2 var(--font-body);letter-spacing:.14em;text-transform:uppercase;color:#c8102e}
+.scene-cap .t{margin:0}
+.scene-cap .c{margin:6px 0 0;font:500 11px/1.2 var(--font-body);color:#6a655b}
+/* view switcher (shown while a mapped report is open) */
+.modes{position:fixed;top:20px;right:20px;z-index:7;display:flex;border:1px solid #111;background:#f3f0e8}
+.modes[hidden],body:not(.focus) .modes{display:none}
+.modes button{border:0;background:#f3f0e8;color:#111;font:600 12px/1 var(--font-body);letter-spacing:.08em;text-transform:uppercase;padding:11px 14px;cursor:pointer}
+.modes button+button{border-left:1px solid #111}
+.modes button[aria-pressed="true"]{background:#111;color:#f3f0e8}
+.modes button:disabled{color:#b9b2a3;cursor:not-allowed}
+.modes .spin{font-size:15px;padding:9px 13px;letter-spacing:0}
+.modes button:focus-visible{outline:2px solid #c8102e;outline-offset:-3px}
+body[data-scene="3d"] .mapkey,body[data-scene="street"] .mapkey{display:none}
+body[data-scene="satellite"] .mapkey{background:#f3f0e8}
+/* guided tour */
+.tourbtn{border:1px solid #111;background:#111;color:#f3f0e8;font:600 12px/1 var(--font-body);letter-spacing:.08em;text-transform:uppercase;padding:12px 14px;cursor:pointer}
+.tourbtn:hover{background:#c8102e;border-color:#c8102e}
+.tourbar{position:fixed;left:calc(var(--pw) + 20px);top:20px;z-index:8;display:flex;align-items:center;gap:12px;background:#111;color:#f3f0e8;padding:8px 8px 8px 14px;
+  font:600 12px/1 var(--font-body);letter-spacing:.06em;text-transform:uppercase}
+.tourbar .tn{color:#b9b2a3}
+.tourbar button{border:1px solid #f3f0e8;background:none;color:#f3f0e8;font:inherit;padding:8px 10px;cursor:pointer}
+.tourbar button:hover{background:#c8102e;border-color:#c8102e}
+@media (max-width:760px){
+  .scene{left:0;bottom:calc(46vh + 60px)}
+  .scene-cap{left:8px;right:8px;bottom:8px;max-width:none;font-size:11.5px;padding:7px 10px 6px}
+  .scene-cap .c{display:none}
+  .modes{top:8px;right:8px;left:8px;overflow-x:auto}
+  .modes button{padding:9px 9px;font-size:10.5px;white-space:nowrap;flex:1}
+  .tourbar{left:10px;right:10px;top:56px}
+}
+
+/* ——— list box: collapsed to a one-line ticker at the top level; open shows the tabs and the scrolling list */
+.ticker{display:none}
+.feed.collapsed{flex:none!important}
+.feed.collapsed .ticker{display:flex;flex-direction:column;padding:16px 28px 18px}
+.tick-hd{display:flex;align-items:center;justify-content:space-between;gap:12px;margin:0 0 12px}
+.tick-hd .blk-h{margin:0}
+.tick-pg{display:flex;align-items:center;gap:6px;font:600 11.5px/1 var(--font-body);font-variant-numeric:tabular-nums;color:#6a655b}
+.tick-pg span{margin-right:6px}
+.tick-pg button{display:grid;place-items:center;width:26px;height:26px;padding:0;border:1px solid #111;background:#f3f0e8;color:#111;cursor:pointer}
+.tick-pg button svg{width:12px;height:12px}
+.tick-pg button:hover:not(:disabled){background:#111;color:#f3f0e8}
+.tick-pg button:disabled{opacity:.3;cursor:default}
+.tick-pg button:focus-visible{outline:2px solid #c8102e;outline-offset:2px}
+.feed.collapsed .tabs,.feed.collapsed .fhd,.feed.collapsed .fbody,.feed.collapsed .itabs{display:none}
+.tick-item{display:block;width:100%;text-align:left;border:0;background:none;padding:0;cursor:pointer;color:#111}
+.tick-item .tk-k{display:block;font:700 10.5px/1.3 var(--font-body);letter-spacing:.12em;text-transform:uppercase;color:#c8102e;margin-bottom:4px}
+.tick-item .tk-t{display:-webkit-box;-webkit-box-orient:vertical;-webkit-line-clamp:2;overflow:hidden;min-height:2.3em;font:400 21px/1.15 "Instrument Serif",serif;text-wrap:balance}
+/* the wait before the next report rolls in */
+.tick-bar{display:block;height:2px;margin-top:14px;background:#e0dacd}
+.tick-bar b{display:block;height:100%;width:0;background:#111}
+.tick-bar b.run{animation:tickbar 5s linear forwards}
+.ticker:hover .tick-bar b,.ticker:focus-within .tick-bar b{animation-play-state:paused}
+@keyframes tickbar{to{width:100%}}
+.tick-item:hover .tk-t{text-decoration:underline;text-underline-offset:3px}
+.tick-item.roll{animation:tickroll .45s cubic-bezier(.2,.8,.2,1) both}
+@keyframes tickroll{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:none}}
+.tick-open{border:1px solid #111;background:#f3f0e8;color:#111;font:600 11px/1 var(--font-body);letter-spacing:.08em;text-transform:uppercase;padding:10px 14px;cursor:pointer}
+.feed:not(.collapsed)~.aboutline .tick-open{display:none}
+.tick-open:hover{background:#111;color:#f3f0e8}
+.tick-item:focus-visible,.tick-open:focus-visible,.tabs-close:focus-visible{outline:2px solid #c8102e;outline-offset:2px}
+.tabs{position:relative}
+.tabs .tabs-close{flex:0 0 38px;font:600 16px/1 var(--font-body);letter-spacing:0}
+body.focus .ticker{display:none!important}
+body.focus .feed.collapsed{flex:1 1 auto!important}
+body.focus .feed.collapsed .fhd{display:block}
+body.focus .feed.collapsed .fbody{display:flex}
+@media (prefers-reduced-motion:reduce){.tick-item.roll{animation:none}.tick-bar{display:none}}
+
+/* the open report: a dot exactly at the centre of its ring (no stalk to float above it) */
+.pin.sel{transform:translate(-50%,-50%) scale(1)!important}
+.pin.sel .pin-stalk,.pin.sel .pin-foot{display:none}
+.pin.sel .pin-lbl{bottom:calc(100% + 8px)}
+
+/* ——— overview balance: spare height is shared between the groups, and type scales with the screen */
+body:not(.focus) .panel .blk{margin-top:auto}
+body:not(.focus) .panel .feed.collapsed{margin-top:auto;border-top:1px solid #111;padding-top:0}
+.panel .num{font-size:clamp(64px,10.5vh,124px)}
+.panel .unit{font-size:clamp(22px,3vh,32px)}
+.panel .dek{font-size:clamp(14px,1.75vh,16.5px)}
+.bar{padding-block:clamp(3px,.9vh,10px)}
+.bar .bn{font-size:clamp(20px,2.6vh,28px)}
+.tick-item .tk-t{font-size:clamp(19px,2.6vh,27px)}
+.ctysplit{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin:2px 0 10px;padding:10px 0;border-block:1px solid #cfc9bb}
+.ctysplit span{display:flex;flex-direction:column;gap:3px;font:500 12.5px/1.3 var(--font-body);color:#2c2a26}
+.ctysplit b{font:400 clamp(26px,3.4vh,36px)/.9 "Instrument Serif",serif;color:#111;font-variant-numeric:tabular-nums}
+.ctysplit i{font-style:normal;font-size:11px;color:#8d877b}
+@media (max-height:760px){.ctysplit{display:none}}
+
+/* ——— incident dossier: fixed header, numbers strip, then two columns on wide screens (the report | the place).
+   The panel widens while a report is open; only the story and the closest-reports list scroll, inside. */
+.pwprobe{position:fixed;left:0;top:0;width:var(--pw);height:0;visibility:hidden;pointer-events:none}
+.lede.panel{transition:width .45s cubic-bezier(.2,.8,.2,1)}
+.tl,.scene{transition:left .45s cubic-bezier(.2,.8,.2,1)}
+@media (min-width:1100px){body.focus{--pw:clamp(700px,50vw,940px)}}
+@media (prefers-reduced-motion:reduce){.lede.panel,.tl,.scene{transition:none}}
+.flist[hidden]{display:none!important}
+body.focus .fbody{display:flex;flex-direction:column;overflow:hidden;margin:0;border:0}
+.fdetail{flex:1 1 auto;min-height:0;display:flex;flex-direction:column;padding:0 var(--gut) 18px}
+.fdetail[hidden]{display:none}
+.panel .feed.filtered .fsel{padding-bottom:16px}
+.panel .feed.filtered .fsel h3{margin:6px 0 12px}
+
+.dx-jump{display:none}
+.dx-stats{flex:none;display:grid;grid-template-columns:repeat(4,minmax(0,1fr));border-block:1px solid #111}
+.st{display:flex;flex-direction:column;gap:4px;min-width:0;padding:12px 12px 13px 0}
+.st+.st{border-left:1px solid #cfc9bb;padding-left:16px}
+.st-k{font:700 10.5px/1.2 var(--font-body);letter-spacing:.14em;text-transform:uppercase;color:#111}
+.st-v{font:400 clamp(30px,3.8vh,42px)/.9 "Instrument Serif",serif;letter-spacing:-.01em;font-variant-numeric:tabular-nums;color:#111}
+.st.hot .st-v{color:#c8102e}
+.st-s{font:500 11.5px/1.25 var(--font-body);color:#6a655b}
+
+.dx-cols{flex:1 1 auto;min-height:0;display:grid;grid-template-columns:minmax(0,1.18fr) minmax(0,1fr)}
+.dx-a,.dx-b{display:flex;flex-direction:column;min-height:0;padding-top:16px}
+.dx-a{padding-right:26px}
+.dx-b{padding-left:26px;border-left:1px solid #cfc9bb}
+.dx-lede{flex:none;margin:0;font:400 17px/1.5 var(--font-body);color:#2c2a26;text-wrap:pretty}
+.dx-h{flex:none;display:flex;justify-content:space-between;align-items:baseline;gap:10px;margin:0;padding:0 0 9px;border-bottom:1px solid #111;
+  font:700 11px/1.2 var(--font-body);letter-spacing:.14em;text-transform:uppercase;color:#111;scroll-margin-top:48px}
+.dx-h span{font-weight:600;letter-spacing:.06em;color:#6a655b}
+
+/* story: a rail from the first event to "last checked"; gaps are sized by the time they cover */
+.story{flex:1 1 0;min-height:90px;overflow-y:auto;overscroll-behavior:contain;scrollbar-width:thin;scrollbar-color:#b9b2a3 transparent;padding-top:16px}
+.tl-list{position:relative;list-style:none;margin:0;padding:0}
+.tl-list::before{content:"";position:absolute;left:6px;width:2px;top:var(--r0,8px);bottom:var(--r1,8px);background:#111}
+.tl-ev{position:relative;padding-left:28px}
+.tl-ev .dot{position:absolute;left:0;top:1px;z-index:1;width:14px;height:14px;border-radius:50%;background:#111;box-shadow:0 0 0 3px #f3f0e8}
+.tl-ev.t-news .dot{background:#c8102e}
+.tl-ev.t-arrest .dot{border-radius:1px;width:12px;height:12px;left:1px;top:2px}
+.tl-ev.t-call .dot{background:#f3f0e8;box-shadow:inset 0 0 0 3px #c8102e,0 0 0 3px #f3f0e8}
+.tl-ev.t-tip .dot{background:#f3f0e8;box-shadow:inset 0 0 0 2px #8d877b,0 0 0 3px #f3f0e8}
+.tl-ev.cap .dot{background:#f3f0e8;box-shadow:inset 0 0 0 2px #111,0 0 0 3px #f3f0e8}
+.tl-ev.cap.end .dot{background:radial-gradient(circle,#111 0 3px,#f3f0e8 3.5px)}
+.tl-m{margin:0;display:flex;flex-wrap:wrap;align-items:baseline;gap:2px 0;font:600 11px/1.35 var(--font-body);letter-spacing:.08em;text-transform:uppercase;color:#6a655b}
+.tl-m>*+*::before{content:"·";margin:0 7px;color:#b9b2a3}
+.tl-m b{font-weight:700;color:#111}
+.tl-ev.t-news .tl-m b{color:#c8102e}
+.tl-t{display:-webkit-box;-webkit-box-orient:vertical;-webkit-line-clamp:3;overflow:hidden;margin:5px 0 0;font:500 15px/1.36 var(--font-body);color:#111;text-decoration:none;text-wrap:pretty}
+a.tl-t:hover{text-decoration:underline;text-underline-offset:3px}
+a.tl-t:focus-visible{outline:2px solid #c8102e;outline-offset:2px}
+.tl-t .ext{color:#c8102e;font-weight:600}
+.tl-ev.cap .tl-t{font:400 21px/1.1 "Instrument Serif",serif;margin-top:3px}
+.tl-n{margin:4px 0 0;font:italic 400 12.5px/1.4 var(--font-body);color:#6a655b}
+.tl-gap{position:relative;display:flex;align-items:center;min-height:22px;padding-left:28px;font:italic 400 14.5px/1 "Instrument Serif",serif;color:#8d877b}
+.tl-ev.boiler .tl-t{-webkit-line-clamp:2}
+.tl-gap.tight span{display:none}
+.tl-gap.long::before{content:"";position:absolute;left:5px;top:6px;bottom:6px;width:4px;z-index:1;background:repeating-linear-gradient(#f3f0e8 0 5px,transparent 5px 10px)}
+
+/* the place: where, the closest other reports, area facts */
+.w-t{margin:0;font:400 20px/1.1 "Instrument Serif",serif;color:#111;text-wrap:balance}
+.w-p{margin:6px 0 0;display:grid;grid-template-columns:14px minmax(0,1fr);column-gap:8px;align-items:start;font:400 12.5px/1.4 var(--font-body);color:#4f4b44}
+.w-p em{font-style:normal;font-weight:600;color:#111}
+.w-g{width:12px;height:12px;margin-top:2px;border-radius:50%;border:2px solid #c8102e;background:rgba(200,16,46,.12)}
+.w-g.road{height:4px;margin-top:7px;border:0;border-radius:2px;background:#c8102e}
+.w-g.none{border-style:dashed;border-color:#8d877b;background:none}
+.near{flex:1 1 0;min-height:90px;overflow-y:auto;overscroll-behavior:contain;scrollbar-width:thin;scrollbar-color:#b9b2a3 transparent;list-style:none;margin:0;padding:0 0 4px}
+.nr-g{padding:12px 0 5px;font:700 10px/1.2 var(--font-body);letter-spacing:.12em;text-transform:uppercase;color:#8d877b}
+.nr{display:grid;grid-template-columns:12px minmax(0,1fr) auto;column-gap:10px;row-gap:2px;align-items:baseline;padding:8px 6px 9px 0;border-bottom:1px solid #e3ddd0;cursor:pointer}
+.nr i{grid-row:1 / 3;align-self:start;width:10px;height:10px;margin-top:3px;border-radius:50%;background:var(--c)}
+.nr i.hollow{background:#f3f0e8;box-shadow:inset 0 0 0 2.5px var(--c)}
+.nr i.fatal{box-shadow:0 0 0 2px #f3f0e8,0 0 0 3.5px #c8102e}
+.nr-t{font:600 13px/1.3 var(--font-body);color:#111}
+.nr-t em{font-style:normal;font-weight:500;color:#6a655b;margin-left:8px}
+.nr-d{font:600 12px/1.3 var(--font-body);color:#111;font-variant-numeric:tabular-nums}
+.nr-p{grid-column:2 / 4;font:400 13px/1.35 var(--font-body);color:#4f4b44;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.nr:hover,.nr:focus-visible{background:#ebe6da;outline:none}
+.nr:focus-visible{box-shadow:inset 3px 0 0 #c8102e}
+
+/* narrower screens: one column that scrolls inside the panel, with a sticky row of section links */
+@media (max-width:1099px){
+  body.focus .fdetail{display:block;overflow-y:auto;overscroll-behavior:contain;scrollbar-width:thin}
+  .dx-jump{display:flex;position:sticky;top:0;z-index:2;margin:0 calc(var(--gut) * -1);padding:0 calc(var(--gut) - 6px);background:#f3f0e8;border-bottom:1px solid #111}
+  .dx-jump button{flex:1;border:0;background:none;padding:12px 6px;font:600 11px/1 var(--font-body);letter-spacing:.08em;text-transform:uppercase;color:#4f4b44;cursor:pointer}
+  .dx-jump button:hover{color:#111;text-decoration:underline;text-underline-offset:3px}
+  .dx-stats{border-top:0}
+  .dx-cols,.dx-a,.dx-b{display:block}
+  .dx-a{padding-right:0}
+  .dx-b{padding-left:0;border-left:0}
+  .dx-h{margin-top:4px}
+  .story,.near{flex:none;overflow:visible;min-height:0}
+  .near>li:nth-child(n+13){display:none}
+  .dx-stats{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .dx-stats .st:nth-child(3){border-left:0;padding-left:0}
+  .dx-stats .st:nth-child(n+3){border-top:1px solid #cfc9bb}
+}
+.tl-q{margin:7px 0 0;font:500 13px/1.5 var(--font-body);color:#2c2a26;text-wrap:pretty}
+.tl-q b{margin-right:9px;font:700 10.5px/1.2 var(--font-body);letter-spacing:.12em;text-transform:uppercase;color:#c8102e}
+.tl-q span+span::before{content:"·";margin:0 7px;color:#b9b2a3}
+.tl-gap .tk{position:absolute;left:3px;width:8px;height:1.5px;background:#111;display:none}
+.tl-gap .tk em{position:absolute;left:25px;top:-6px;white-space:nowrap;font:600 10px/1 var(--font-body);font-style:normal;letter-spacing:.08em;text-transform:uppercase;color:#a39c8e}
+.tl-gap.ruled .tk{display:block}
+.tl-gap.ruled{align-items:flex-start;padding-top:10px}
+.tl-gap.quiet{min-height:14px}
+
+/* phone, report open: a taller sheet that scrolls as one piece under a sticky nav bar; the timeline and key step aside */
+@media (max-width:760px){
+  body.focus .lede.panel{height:58vh}
+  body.focus .tl,body.focus .mapkey{display:none}
+  body.focus .scene{bottom:58vh}
+  body.focus .panel .feed{display:block;overflow-y:auto;overscroll-behavior:contain}
+  body.focus .fbody,body.focus .fdetail{display:block;overflow:visible}
+  body.focus .dx-jump{display:none}
+  body.focus .panel .feed .fhd{display:contents}  /* so the nav bar can stick to the top of the whole sheet */
+  .fbar2{padding:10px 18px}
+}
+/* equal breathing room above both overview sections (the dek already carries 20px below it) */
+body:not(.focus) .panel .blk{margin-bottom:20px}
+
+/* ——— overview rhythm: every gap between sections is equal. Spacers share the spare height evenly and never
+   drop below --gap; inside a group (headline, dek, toll) the spacing is fixed. */
+.lede.panel{--gap:clamp(14px,2.2vh,26px)}
+.lede.panel>.sp{display:block;flex:1 1 0;min-height:var(--gap)}
+.lede.panel:has(.feed:not(.collapsed))>.sp{flex-grow:0}
+body.focus .lede.panel>.sp{display:none}
+.panel .mast{margin:0}
+.panel .hl{margin:0}
+.panel .dek{margin:12px 0 0}
+body:not(.focus) .panel .blk,body:not(.focus) .panel .feed.collapsed{margin-top:0;margin-bottom:0}
+@media (max-height:900px){.panel .mast{margin:0}}
+.toll{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));margin:18px 28px 0;border-top:1px solid #111}
+.toll .st{padding-block:9px 10px;gap:3px}
+.toll .st-v{font-size:clamp(26px,3.2vh,36px)}
+@media (max-height:700px){.toll{display:none}}
+@media (max-width:760px){.toll{display:none;margin:12px 18px 0}body.sheet-open .toll{display:grid}.lede.panel>.sp{min-height:10px}}
+/* measure gaps from what you see: no trailing padding under the last type row */
+body:not(.focus) .panel .blk{padding-bottom:0}
+.bars li:last-child .bar{padding-bottom:0}
+/* shorter screens: the same layout, slightly tighter, so it still fits without scrolling */
+@media (max-height:860px){
+  .panel .mast{padding-top:11px;padding-bottom:9px}
+  .feed.collapsed .ticker{padding:12px 28px 14px}
+  .tick-hd{margin-bottom:8px}
+  .tick-bar{margin-top:10px}
+  .toll .st{padding-block:7px 8px}
+  .bar{padding-block:clamp(3px,.7vh,8px)}
+  .aboutline{padding-block:10px}
+}
+/* the intro sentence needs about 90 px; below 1000 px of height it steps aside ("About this data" still says it) */
+@media (max-height:1000px){.panel .dek{display:none}}
+/* very tall screens: type keeps growing with the height, and once the section gaps reach 64 px the type rows
+   take the rest as even row spacing, so gaps never balloon */
+.lede.panel>.sp{max-height:64px}
+@media (min-width:761px){
+  body:not(.focus) .panel .blk{flex:1 1 auto;display:flex;flex-direction:column}
+  body:not(.focus) .panel .bars{flex:1 1 auto;display:flex;flex-direction:column;justify-content:space-between}
+}
+/* phone: the expanded sheet holds more than fits, so it scrolls inside (the page itself never does) */
+@media (max-width:760px){body.sheet-open:not(.focus) .lede.panel{overflow-y:auto;overscroll-behavior:contain}}
+.panel .num{font-size:clamp(64px,10.5vh,150px)}
+.bar .bn{font-size:clamp(20px,2.6vh,34px)}
+.bar .bl{font-size:clamp(14px,1.4vh,17px)}
+.tick-item .tk-t{font-size:clamp(19px,2.6vh,32px)}
+.toll .st-v{font-size:clamp(26px,3.2vh,44px)}
+.ctysplit b{font-size:clamp(26px,3.4vh,44px)}
+
+/* ——— phones: one-line area picker and key, no county captions over the pins, even gaps in the sheet */
+.seg-sel,.mapkey .k-s{display:none}
+@media (max-width:760px){
+  .tools{display:flex;gap:8px;align-items:stretch;overflow:visible}
+  .tools .seg{display:none}
+  .seg-sel{display:block;flex:1 1 auto;min-width:0;appearance:none;-webkit-appearance:none;border:1px solid #111;border-radius:0;
+    background:#f3f0e8 url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 24 24' fill='none' stroke='%23111' stroke-width='3' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M6 9l6 6 6-6'/%3E%3C/svg%3E") no-repeat right 12px center;
+    padding:11px 36px 11px 12px;font:600 12px/1 var(--font-body);letter-spacing:.08em;text-transform:uppercase;color:#111}
+  .tools .tourbtn{flex:none;white-space:nowrap;padding:11px 14px}
+  .mapkey{flex-wrap:nowrap;gap:12px;justify-content:space-between;padding:7px 10px;font-size:11px}
+  .mapkey .k-l{display:none}.mapkey .k-s{display:inline;font-style:normal}
+  .mapkey span,.mapkey label{gap:5px}
+  .cty{display:none}
+  .lede.panel>.sp{max-height:none}
+  body:not(.sheet-open) .panel .blk+.sp{display:none}
+}
+.mapkey em{font-style:normal}
+/* one side margin for every panel section (28 px wide screens, 22 px narrower, 18 px phones) */
+@media (max-width:760px){:root{--gut:18px}}
+.panel .mast{padding-left:var(--gut);padding-right:var(--gut)}
+.panel>.hl,.panel>.dek{padding-left:var(--gut);padding-right:var(--gut)}
+.toll,.toll{margin-left:var(--gut);margin-right:var(--gut)}
+.panel .blk{margin-left:var(--gut);margin-right:var(--gut)}
+.feed.collapsed .ticker{padding-left:var(--gut);padding-right:var(--gut)}
+.aboutline{padding-left:var(--gut);padding-right:var(--gut)}
+.panel .tabs{margin-left:var(--gut);margin-right:var(--gut)}
+
+/* ——— report page rows: what happened spans the page; the two lists sit side by side; the area strip closes it */
+.dx-desc{flex:none;padding:18px 0 16px;border-bottom:1px solid #cfc9bb}
+.dx-facts{display:grid;grid-template-columns:repeat(auto-fit,minmax(190px,1fr));gap:12px 28px;margin-top:14px}
+.fx-c{min-width:0;scroll-margin-top:48px}
+.fx-c>b{display:block;margin-bottom:5px;font:700 10.5px/1.2 var(--font-body);letter-spacing:.14em;text-transform:uppercase;color:#111}
+.fx-c>p{margin:0;font:500 14px/1.4 var(--font-body);color:#111}
+.fx-c>small{display:block;margin-top:3px;font:400 12px/1.35 var(--font-body);color:#6a655b}
+.fx-unk>b{color:#c8102e}
+.fx-unk>p{font-weight:400;font-size:13px;color:#2c2a26}
+.dx-area{flex:none;margin-top:14px;border-top:1px solid #111;scroll-margin-top:48px}
+.ar-h{display:flex;flex-wrap:wrap;align-items:baseline;gap:4px 12px;margin:0;padding:10px 0 2px}
+.ar-h b{font:700 11px/1.2 var(--font-body);letter-spacing:.14em;text-transform:uppercase;color:#111}
+.ar-h span{font:400 11.5px/1.35 var(--font-body);color:#6a655b}
+.ar-strip{display:grid;grid-template-columns:repeat(4,minmax(0,1fr))}
+.ar-strip .st{padding-block:8px 2px}
+.ar-strip .st-v{font-size:clamp(24px,3vh,32px)}
+@media (max-width:1099px){
+  .dx-desc{border-bottom:0}
+  .dx-area{margin-top:22px}
+  .ar-strip{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .ar-strip .st:nth-child(3){border-left:0;padding-left:0}
+}
+
+/* ——— town names on the zoomed-out map (Google's own place names are hidden there) */
+.twn{position:absolute;left:0;top:0;pointer-events:none;white-space:nowrap;z-index:0}
+.twn span{display:block;font:600 10.5px/14px var(--font-body);letter-spacing:.11em;text-transform:uppercase;color:#4f4b44;
+  text-shadow:0 0 3px #f3f0e8,0 0 3px #f3f0e8,0 0 2px #f3f0e8}
+.twn.big span{font-size:12.5px;letter-spacing:.13em;color:#2c2a26}
+#map[data-z="far"] .twn.small{display:none}
+#map[data-z="near"] .twn,#map[data-base="satellite"] .twn{display:none}
+
+/* ——— arrests: the headline tile opens the list; rows without a report are plain */
+.st-btn{border:0;background:none;text-align:left;cursor:pointer;font:inherit;color:inherit}
+.toll .st-btn{padding-right:0}
+.st-btn:hover .st-k,.st-btn:hover .st-v{text-decoration:underline;text-underline-offset:3px;text-decoration-thickness:1px}
+.st-btn:focus-visible{outline:2px solid #c8102e;outline-offset:2px}
+.panel .tabs button{letter-spacing:.05em;padding:10px 4px}
+.arr-note{list-style:none;margin:0;padding:10px var(--gut) 12px;font:400 12.5px/1.45 var(--font-body);color:#4f4b44;border-bottom:1px solid #cfc9bb}
+.fi.arr{--c:#111;cursor:default}
+.fi.arr[data-id]{cursor:pointer}
+.fi.arr .ft{color:#111!important}
+/* the list open: it takes the room the type bars and intro had (both come back when it's collapsed) */
+.lede.panel:has(.feed:not(.collapsed)) .blk,.lede.panel:has(.feed:not(.collapsed)) .dek,
+.lede.panel:has(.feed:not(.collapsed)) .blk+.sp{display:none}
+.ctysplit i.cty-state{color:#6a655b}
+
+/* the overview's fit steps (set by fitOverview in ui.js when the content is taller than the panel) */
+.lede.panel.fit-1 .dek{display:none}
+.lede.panel.fit-2 .ctysplit .cty-state{display:none}
+.lede.panel.fit-3 .ctysplit{display:none}

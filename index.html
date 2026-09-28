@@ -1,0 +1,74 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>30 Days of Violence Reports · Florence &amp; Darlington</title>
+<meta name="description" content="Every public report of violence in Florence and Darlington counties, S.C., over the last 30 days: 911 calls, news reports, agency statements and arrests, each linked to its sources.">
+<link rel="stylesheet" href="styles.css">
+<link rel="stylesheet" href="atlas.css">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Instrument+Sans:wght@400;500;600;700&display=swap">
+<style>
+/* Broadsheet theme (from the owner's 3c design) */
+:root{--pw:420px}
+.lede.panel{left:0px;top:0px;bottom:0px;width:min(var(--pw),calc(100vw - 40px))}
+.tl{left:calc(var(--pw) + 0px);right:20px;bottom:20px}
+.tools{top:20px;right:20px}
+@media (max-width:980px){:root{--pw:330px}.panel .num{font-size:84px}}
+:root{--color-bg:#f3f0e8;--color-surface:#e9e4d8;--color-text:#111;--color-accent:#c8102e;--color-accent-100:#f8e1e3;--color-accent-200:#f3d0d4;--color-accent-600:#a80d26;--color-accent-700:#a80d26;--color-accent-800:#7d0a1c;--color-neutral-100:#f3f0e8;--color-neutral-200:#e6e1d5;--color-neutral-300:#d6d0c2;--color-neutral-400:#b9b2a3;--color-neutral-500:#8d877b;--color-neutral-600:#6a655b;--color-neutral-700:#4f4b44;--color-neutral-800:#2c2a26;--color-neutral-900:#111;--color-divider:#cfc9bb;--font-heading:"Instrument Serif",Georgia,serif;--font-body:"Instrument Sans",system-ui,sans-serif;--radius-lg:0;--radius-md:0}
+body{background:#f3f0e8}
+.lede.panel{border-radius:0;box-shadow:none;border-right:1px solid #111;padding-top:0}
+.panel .kicker{margin:0 0 22px;padding:14px 28px 12px;border-bottom:1px solid #111;border-top:6px solid #111;color:#111;letter-spacing:.14em;font-size:10.5px}
+.panel .hl{flex-direction:column;align-items:flex-start;gap:6px;margin-bottom:14px}
+.panel .num{font:400 clamp(104px,9vw,148px)/.78 "Instrument Serif",serif;letter-spacing:-.03em}
+.panel .unit{font:italic 400 clamp(26px,2.2vw,32px)/1 "Instrument Serif",serif;letter-spacing:0}
+.panel .dek{font:400 14.5px/1.5 "Instrument Sans",sans-serif;color:#2c2a26}
+.panel .legend{border-color:#111}
+.ticks30{gap:2px}.ticks30 i{border-radius:0;height:26px;opacity:.12}.ticks30 i.on{opacity:1}
+.ticks30 i.fatal{box-shadow:none;background:repeating-linear-gradient(135deg,var(--c) 0 3px,#f3f0e8 3px 5px)}
+.panel .lg b{font:400 40px/.8 "Instrument Serif",serif}
+.panel .lg span i{border-radius:0}
+.fi{border-bottom:1px solid var(--color-divider);border-radius:0}.fi:last-child{border-bottom:0}
+.fi:hover{background:#ebe6da}
+.fi .ftl::before{border-radius:0;width:7px;height:7px}
+.ftl{font:500 15px/1.3 "Instrument Sans",sans-serif}
+.ft{border-radius:0;background:none!important;padding:0;letter-spacing:.12em;color:#111!important}
+.ft-news{color:#c8102e!important}
+.fsel h3{font:400 34px/1 "Instrument Serif",serif}
+.tl{border-radius:0;box-shadow:none;background:#f3f0e8;border-top:1px solid #111;left:calc(var(--pw) + 1px);right:0;bottom:0;padding:14px 28px 14px 20px}
+.play{border-radius:0;background:#111}.play:hover{background:#c8102e}
+.now{font:italic 400 24px/1 "Instrument Serif",serif}
+.head{border-radius:0;width:3px;margin-left:-1.5px;height:28px;bottom:6px;box-shadow:none;background:#c8102e}
+.fill{background:#111;height:2px}.base{height:2px}
+.col i{border-radius:0}
+.seg{border-radius:0;background:#f3f0e8;box-shadow:none;border:1px solid #111;padding:0;gap:0}
+.seg button{border-radius:0;font:600 12px/1 "Instrument Sans",sans-serif;letter-spacing:.08em;text-transform:uppercase;padding:12px 16px}
+.seg button[aria-pressed="true"]{background:#111;color:#f3f0e8}
+.cl{border-radius:0;border:1px solid #111;box-shadow:none;background:#f3f0e8}
+.cl b{font:400 22px/1 "Instrument Serif",serif}
+.cl em{border-radius:0;background:#111;color:#f3f0e8}
+.chip{border-radius:0}.fx{border-radius:0;background:none;border:1px solid #111}
+.fi.big{background:none;border:0;border-top:1px solid #111;padding:14px 0 4px}
+.fi.big .ftl{font:500 17px/1.3 "Instrument Sans",sans-serif}
+.fi.big .ftl::before{display:none}
+.fbar2{border-bottom:1px solid #111;padding-top:14px;padding-bottom:14px}
+.fstep button{border-radius:0;border-color:#111}
+.fx{padding:9px 14px 9px 10px}
+.fsel h3{font:400 clamp(34px,3vw,44px)/.98 "Instrument Serif",serif;letter-spacing:-.01em}
+.chip{padding:6px 10px;font-size:12px}
+.chip.fatal{background:#c8102e;color:#fff}
+.facts{border-top:1px solid #111}
+.facts div{border-bottom-color:#cfc9bb}
+.fsrc{border-bottom:0}
+.fdate em{color:#c8102e}
+body.focus .feed{box-shadow:none}
+</style>
+<link rel="stylesheet" href="app.css">
+</head>
+<body>
+<div id="stage"><div id="map" aria-label="Map of reports"></div></div>
+<noscript><p class="nomap">This page needs JavaScript. The same data is in the downloadable CSV files.</p></noscript>
+<script src="config.js"></script>
+<script type="module" src="app.js"></script>
+</body>
+</html>

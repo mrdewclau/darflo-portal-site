@@ -1,0 +1,51 @@
+{
+ "region": {
+  "name": "Florence & Darlington counties, S.C.",
+  "extents": {
+   "counties": {
+    "label": "Both counties",
+    "w": -80.2888,
+    "e": -79.3138,
+    "s": 33.7754,
+    "n": 34.5352
+   },
+   "florence": {
+    "label": "Florence",
+    "w": -79.9,
+    "e": -79.7177,
+    "s": 34.1106,
+    "n": 34.2386
+   },
+   "hartsville": {
+    "label": "Hartsville",
+    "w": -80.1307,
+    "e": -80.0441,
+    "s": 34.3386,
+    "n": 34.395
+   },
+   "darlington": {
+    "label": "Darlington",
+    "w": -79.9008,
+    "e": -79.834,
+    "s": 34.2804,
+    "n": 34.3216
+   },
+   "lakecity": {
+    "label": "Lake City",
+    "w": -79.7893,
+    "e": -79.714,
+    "s": 33.8448,
+    "n": 33.8952
+   }
+  },
+  "outline": "data/counties.geojson",
+  "towns": "data/towns.geojson"
+ },
+ "layers": [
+  {
+   "id": "violence-30d",
+   "status": "live",
+   "src": "data/incidents-30d.json"
+  }
+ ]
+}
