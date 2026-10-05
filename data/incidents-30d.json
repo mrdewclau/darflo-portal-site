@@ -2,12 +2,12 @@
  "id": "violence-30d",
  "region": "Florence & Darlington counties, S.C.",
  "window": {
-  "start": "2026-08-30",
-  "end": "2026-09-28",
+  "start": "2026-09-05",
+  "end": "2026-10-04",
   "timezone": "America/New_York",
-  "asOf": "2026-09-28T12:35-04:00"
+  "asOf": "2026-10-04T20:33-04:00"
  },
- "generated": "2026-09-28T12:35-04:00",
+ "generated": "2026-10-04T20:34-04:00",
  "noun": {
   "one": "violence report",
   "many": "violence reports"
@@ -84,458 +84,33 @@
   "Darlington": "Hartsville Police publish every incident record (via CityProtect, used with permission), so Hartsville is covered at block level. The rest of Darlington County has no public 911 or incident feed; those reports come from news, reporters, agency releases and jail bookings. Expect an undercount there, not less violence."
  },
  "stats": {
-  "total": 61,
-  "mapped": 61,
+  "total": 67,
+  "mapped": 67,
   "byCounty": {
-   "Florence": 35,
-   "Darlington": 25,
-   "county_line_unclear": 1
+   "Florence": 41,
+   "Darlington": 26
   },
   "byCategory": {
-   "shooting": 30,
-   "threat": 4,
-   "assault": 18,
-   "trauma": 5,
+   "shooting": 32,
+   "assault": 20,
    "stabbing": 2,
-   "robbery": 2
+   "trauma": 8,
+   "robbery": 2,
+   "threat": 3
   },
   "byEvidence": {
-   "call": 27,
+   "call": 33,
    "agency": 34
   },
   "fatalIncidents": 3,
   "killedKnown": 3,
   "injuredKnown": 9,
-  "injuryUnknown": 52,
-  "violentBookings": 116,
-  "violentBookingsTiedToReports": 10,
+  "injuryUnknown": 59,
+  "violentBookings": 149,
+  "violentBookingsTiedToReports": 14,
   "selfInflictedNotMapped": 0
  },
  "records": [
-  {
-   "id": "INC-612A6318FA",
-   "category": "shooting",
-   "evidence": "call",
-   "class": "Gunfire reported, target unknown",
-   "fatal": false,
-   "county": "Florence",
-   "place": "100 block of Joy Dr",
-   "locationPrecision": "block",
-   "ringM": 192,
-   "placedBy": "county-block",
-   "lat": 33.9405,
-   "lon": -79.9607,
-   "date": "2026-08-30",
-   "timePrecision": "minute",
-   "kind": "call_received",
-   "time": "01:27",
-   "summary": "Florence County 911 call classified 'SHOOTING' at 100 block of Joy Dr (unincorporated Florence County). Dispatch record only; what happened is not confirmed.",
-   "uncertainty": "time is when the 911 call was received | dispatch record only; not confirmed",
-   "story": [
-    {
-     "date": "2026-08-30T01:27",
-     "kind": "911 call record",
-     "type": "dispatch",
-     "publisher": "Florence County 911 (via CrimeLocal)",
-     "title": "Shooting call: 100 block of Joy Dr",
-     "url": "https://www.crimelocal.com/crime/291506369-79d082d0c5dfd25d47f97627c2af531e"
-    }
-   ],
-   "n": 1
-  },
-  {
-   "id": "INC-EF3F3AE064",
-   "category": "shooting",
-   "evidence": "call",
-   "class": "Gunfire reported, target unknown",
-   "fatal": false,
-   "county": "Florence",
-   "place": "2700 block of E National Cemetery Rd",
-   "locationPrecision": "block",
-   "ringM": 90,
-   "placedBy": "county-block",
-   "lat": 34.1689,
-   "lon": -79.7149,
-   "date": "2026-08-30",
-   "timePrecision": "minute",
-   "kind": "call_received",
-   "time": "02:08",
-   "summary": "Florence County 911 call classified 'SHOOTING' at 2700 block of E National Cemetery Rd (unincorporated Florence County). Dispatch record only; what happened is not confirmed.",
-   "uncertainty": "time is when the 911 call was received | dispatch record only; not confirmed",
-   "story": [
-    {
-     "date": "2026-08-30T02:08",
-     "kind": "911 call record",
-     "type": "dispatch",
-     "publisher": "Florence County 911 (via CrimeLocal)",
-     "title": "Shooting call: 2700 block of E National Cemetery Rd",
-     "url": "https://www.crimelocal.com/crime/291506371-9238c074c187f9ee0f8f29b044e21160"
-    }
-   ],
-   "n": 2
-  },
-  {
-   "id": "INC-5774B47020",
-   "category": "shooting",
-   "evidence": "call",
-   "class": "Gunfire reported, target unknown",
-   "fatal": false,
-   "county": "Florence",
-   "town": "Florence",
-   "place": "1500 block of S Irby St, Florence",
-   "locationPrecision": "block",
-   "ringM": 215,
-   "placedBy": "county-block",
-   "lat": 34.1647,
-   "lon": -79.7649,
-   "date": "2026-08-31",
-   "timePrecision": "minute",
-   "kind": "call_received",
-   "time": "01:04",
-   "summary": "Florence County 911 call classified 'SHOOTING' at 1500 block of S Irby St (Florence). Dispatch record only; what happened is not confirmed.",
-   "uncertainty": "time is when the 911 call was received | dispatch record only; not confirmed",
-   "story": [
-    {
-     "date": "2026-08-31T01:04",
-     "kind": "911 call record",
-     "type": "dispatch",
-     "publisher": "Florence County 911 (via CrimeLocal)",
-     "title": "Shooting call: 1500 block of S Irby St, Florence",
-     "url": "https://www.crimelocal.com/crime/291541897-de92a4cc88e8d5c88755f9713b7e26ea"
-    }
-   ],
-   "n": 3
-  },
-  {
-   "id": "INC-C0EEF0872B",
-   "category": "shooting",
-   "evidence": "call",
-   "class": "Gunfire reported, target unknown",
-   "fatal": false,
-   "county": "Florence",
-   "town": "Florence",
-   "place": "300 block of W Sumter St, Florence",
-   "locationPrecision": "block",
-   "ringM": 90,
-   "placedBy": "county-block",
-   "lat": 34.2031,
-   "lon": -79.7719,
-   "date": "2026-08-31",
-   "timePrecision": "minute",
-   "kind": "call_received",
-   "time": "16:01",
-   "summary": "Florence County 911 call classified 'SHOOTING' at 300 block of W Sumter St (Florence). Dispatch record only; what happened is not confirmed.",
-   "uncertainty": "time is when the 911 call was received | dispatch record only; not confirmed",
-   "story": [
-    {
-     "date": "2026-08-31T16:01",
-     "kind": "911 call record",
-     "type": "dispatch",
-     "publisher": "Florence County 911 (via CrimeLocal)",
-     "title": "Shooting call: 300 block of W Sumter St, Florence",
-     "url": "https://www.crimelocal.com/crime/291609833-9b3a4b2212caaeede0a76d599b94aee3"
-    }
-   ],
-   "n": 4
-  },
-  {
-   "id": "INC-463B4E448D",
-   "category": "threat",
-   "evidence": "agency",
-   "class": "Threat of violence reported",
-   "fatal": false,
-   "county": "Darlington",
-   "town": "Hartsville",
-   "place": "100 block of School Dr, Hartsville",
-   "locationPrecision": "block",
-   "ringM": 131,
-   "placedBy": "county-block",
-   "lat": 34.3922,
-   "lon": -80.0775,
-   "date": "2026-09-01",
-   "timePrecision": "minute",
-   "kind": "occurred",
-   "time": "13:45",
-   "summary": "Hartsville Police Department report 2026-09-025: Threats at 100 block of School Dr (Hartsville). From the department's own incident record; no details beyond the offense, place and time.",
-   "story": [
-    {
-     "date": "2026-09-01T13:45",
-     "kind": "Police report",
-     "type": "agency",
-     "publisher": "Hartsville Police (CityProtect)",
-     "title": "Hartsville Police report 2026-09-025: Threats",
-     "url": "https://www.cityprotect.com/map/list/incidents?fromDate=2026-08-31T17%3A45%3A00.000Z&toDate=2026-09-02T17%3A45%3A00.000Z&latitude=34.3914&longitude=-80.0765&zoomLevel=17"
-    }
-   ],
-   "n": 5
-  },
-  {
-   "id": "INC-8D9AE9AD95",
-   "category": "shooting",
-   "evidence": "agency",
-   "class": "Directed violence reported",
-   "fatal": false,
-   "killed": 0,
-   "injured": 0,
-   "officerInvolved": true,
-   "county": "county_line_unclear",
-   "place": "Fletcher Dr (off Hoffmeyer Rd), near the Florence-Darlington county line",
-   "locationPrecision": "street",
-   "ringM": 500,
-   "placedBy": "road-at-county-line",
-   "lat": 34.2139,
-   "lon": -79.8687,
-   "date": "2026-09-01",
-   "timePrecision": "part_of_day",
-   "kind": "occurred",
-   "summary": "After a Highway Patrol chase ended on Fletcher Drive off Hoffmeyer Road, the driver ran into the woods and, according to the sheriff's office, fired multiple shots at a trooper and Florence County deputies. No one was hurt; he was found hiding in thick vegetation and arrested.",
-   "uncertainty": "county low: Reports place the chase end 'near the Florence-Darlington county line' without saying which side the gunfire was on; Florence County deputies responding does not establish geography; the Census geocoder has no Fletcher Dr near Hoffmeyer Rd.",
-   "story": [
-    {
-     "date": "2026-09-01T08:42",
-     "kind": "Report",
-     "type": "news",
-     "publisher": "WPDE",
-     "title": "Man arrested after firing shots at Florence Co. deputies following chase, officials say",
-     "url": "https://wpde.com/news/local/man-arrested-after-firing-shots-at-florence-co-deputies-following-chase-officials-say-hoffmeyer-road-darlington-florence-09012026"
-    },
-    {
-     "date": "2026-09-01T13:57",
-     "kind": "First report",
-     "type": "news",
-     "publisher": "WFXB",
-     "title": "Man Arrested After Chase Leads To Shots Fired At Deputies - WFXB",
-     "url": "https://www.wfxb.com/2026/09/01/man-arrested-after-chase-leads-to-shots-fired-at-deputies/"
-    },
-    {
-     "date": "2026-09-01T17:07",
-     "kind": "Report",
-     "type": "news",
-     "publisher": "WMBF",
-     "title": "Suspect shot at Florence County deputies, state trooper after chase, sheriff's office says",
-     "url": "https://www.wmbfnews.com/2026/09/01/suspect-custody-after-florence-county-car-chase/"
-    }
-   ],
-   "n": 6
-  },
-  {
-   "id": "INC-1734DCFF92",
-   "category": "shooting",
-   "evidence": "call",
-   "class": "Gunfire reported, target unknown",
-   "fatal": false,
-   "county": "Florence",
-   "town": "Florence",
-   "place": "900 block of Cherokee Rd, Florence",
-   "locationPrecision": "block",
-   "ringM": 166,
-   "placedBy": "county-block",
-   "lat": 34.1839,
-   "lon": -79.7814,
-   "date": "2026-09-03",
-   "timePrecision": "minute",
-   "kind": "call_received",
-   "time": "00:23",
-   "summary": "Florence County 911 call classified 'SHOOTING' at 900 block of Cherokee Rd (Florence). Dispatch record only; what happened is not confirmed.",
-   "uncertainty": "time is when the 911 call was received | dispatch record only; not confirmed",
-   "story": [
-    {
-     "date": "2026-09-03T00:23",
-     "kind": "911 call record",
-     "type": "dispatch",
-     "publisher": "Florence County 911 (via CrimeLocal)",
-     "title": "Shooting call: 900 block of Cherokee Rd, Florence",
-     "url": "https://www.crimelocal.com/crime/291740698-60b28952dc030bfc2c7bb116ea07577e"
-    }
-   ],
-   "n": 7
-  },
-  {
-   "id": "INC-60337E1039",
-   "category": "assault",
-   "evidence": "agency",
-   "class": "Directed violence reported",
-   "fatal": false,
-   "county": "Darlington",
-   "town": "Hartsville",
-   "place": "100 block of School Dr, Hartsville",
-   "locationPrecision": "block",
-   "ringM": 131,
-   "placedBy": "county-block",
-   "lat": 34.3922,
-   "lon": -80.0775,
-   "date": "2026-09-03",
-   "timePrecision": "minute",
-   "kind": "occurred",
-   "time": "11:15",
-   "summary": "Hartsville Police Department report 2026-09-082: Assault and battery 3rd at 100 block of School Dr (Hartsville). From the department's own incident record; no details beyond the offense, place and time.",
-   "story": [
-    {
-     "date": "2026-09-03T11:15",
-     "kind": "Police report",
-     "type": "agency",
-     "publisher": "Hartsville Police (CityProtect)",
-     "title": "Hartsville Police report 2026-09-082: Assault and battery 3rd",
-     "url": "https://www.cityprotect.com/map/list/incidents?fromDate=2026-09-02T15%3A15%3A00.000Z&toDate=2026-09-04T15%3A15%3A00.000Z&latitude=34.3913&longitude=-80.0765&zoomLevel=17"
-    }
-   ],
-   "n": 8
-  },
-  {
-   "id": "INC-8DF217B33B",
-   "category": "shooting",
-   "evidence": "call",
-   "class": "Gunfire reported, target unknown",
-   "fatal": false,
-   "county": "Florence",
-   "place": "1600 block of McCutcheon Rd",
-   "locationPrecision": "block",
-   "ringM": 90,
-   "placedBy": "county-block",
-   "lat": 33.8639,
-   "lon": -79.6857,
-   "date": "2026-09-03",
-   "timePrecision": "minute",
-   "kind": "call_received",
-   "time": "22:38",
-   "summary": "Florence County 911 call classified 'SHOOTING' at 1600 block of McCutcheon Rd (unincorporated Florence County). Dispatch record only; what happened is not confirmed.",
-   "uncertainty": "time is when the 911 call was received | dispatch record only; not confirmed",
-   "story": [
-    {
-     "date": "2026-09-03T22:38",
-     "kind": "911 call record",
-     "type": "dispatch",
-     "publisher": "Florence County 911 (via CrimeLocal)",
-     "title": "Shooting call: 1600 block of McCutcheon Rd",
-     "url": "https://www.crimelocal.com/crime/291809737-8f6e310fe023dfa226a2dc8b4190089c"
-    }
-   ],
-   "n": 9
-  },
-  {
-   "id": "INC-BBD13F2728",
-   "category": "assault",
-   "evidence": "agency",
-   "class": "Directed violence reported",
-   "fatal": false,
-   "county": "Darlington",
-   "town": "Hartsville",
-   "place": "400 block of Swift Creek Rd, Hartsville",
-   "locationPrecision": "block",
-   "ringM": 90,
-   "placedBy": "county-block",
-   "lat": 34.3685,
-   "lon": -80.064,
-   "date": "2026-09-04",
-   "timePrecision": "minute",
-   "kind": "occurred",
-   "time": "00:25",
-   "summary": "Hartsville Police Department report 2026-09-103: Assault and battery 3rd at 400 block of Swift Creek Rd (Hartsville). From the department's own incident record; no details beyond the offense, place and time.",
-   "story": [
-    {
-     "date": "2026-09-04T00:25",
-     "kind": "Police report",
-     "type": "agency",
-     "publisher": "Hartsville Police (CityProtect)",
-     "title": "Hartsville Police report 2026-09-103: Assault and battery 3rd",
-     "url": "https://www.cityprotect.com/map/list/incidents?fromDate=2026-09-03T04%3A25%3A00.000Z&toDate=2026-09-05T04%3A25%3A00.000Z&latitude=34.3674&longitude=-80.0624&zoomLevel=17"
-    }
-   ],
-   "n": 10
-  },
-  {
-   "id": "INC-4EE6F9012D",
-   "category": "threat",
-   "evidence": "agency",
-   "class": "Threat of violence reported",
-   "fatal": false,
-   "county": "Darlington",
-   "town": "Hartsville",
-   "place": "100 block of School Dr, Hartsville",
-   "locationPrecision": "block",
-   "ringM": 131,
-   "placedBy": "county-block",
-   "lat": 34.3922,
-   "lon": -80.0775,
-   "date": "2026-09-04",
-   "timePrecision": "minute",
-   "kind": "occurred",
-   "time": "12:25",
-   "summary": "Hartsville Police Department report 2026-09-125: Threats at 100 block of School Dr (Hartsville). From the department's own incident record; no details beyond the offense, place and time.",
-   "story": [
-    {
-     "date": "2026-09-04T12:25",
-     "kind": "Police report",
-     "type": "agency",
-     "publisher": "Hartsville Police (CityProtect)",
-     "title": "Hartsville Police report 2026-09-125: Threats",
-     "url": "https://www.cityprotect.com/map/list/incidents?fromDate=2026-09-03T16%3A25%3A00.000Z&toDate=2026-09-05T16%3A25%3A00.000Z&latitude=34.3920&longitude=-80.0765&zoomLevel=17"
-    }
-   ],
-   "n": 11
-  },
-  {
-   "id": "INC-B6A6065DB1",
-   "category": "trauma",
-   "evidence": "call",
-   "class": "Possible violence, unresolved",
-   "fatal": false,
-   "county": "Florence",
-   "place": "2400 block of W Bryan St",
-   "locationPrecision": "block",
-   "ringM": 202,
-   "placedBy": "county-block",
-   "lat": 34.151,
-   "lon": -79.8112,
-   "date": "2026-09-04",
-   "timePrecision": "minute",
-   "kind": "call_received",
-   "time": "18:46",
-   "summary": "Florence County 911 call classified 'STAB/GUNSHOT/PENETRATING TRAUMA' at 2400 block of W Bryan St (unincorporated Florence County). Dispatch record only; what happened is not confirmed.",
-   "uncertainty": "time is when the 911 call was received | dispatch record only; not confirmed",
-   "story": [
-    {
-     "date": "2026-09-04T18:46",
-     "kind": "911 call record",
-     "type": "dispatch",
-     "publisher": "Florence County 911 (via CrimeLocal)",
-     "title": "Shooting call: 2400 block of W Bryan St",
-     "url": "https://www.crimelocal.com/crime/291862485-f9efb88c89888a6e9bd988e1dd1c48fd"
-    }
-   ],
-   "n": 12
-  },
-  {
-   "id": "INC-38CB77EA3E",
-   "category": "assault",
-   "evidence": "agency",
-   "class": "Directed violence reported",
-   "fatal": false,
-   "county": "Darlington",
-   "town": "Hartsville",
-   "place": "300 block of N Third St, Hartsville",
-   "locationPrecision": "block",
-   "ringM": 90,
-   "placedBy": "county-block",
-   "lat": 34.3795,
-   "lon": -80.0691,
-   "date": "2026-09-04",
-   "timePrecision": "minute",
-   "kind": "occurred",
-   "time": "21:48",
-   "summary": "Hartsville Police Department report 2026-09-141: Documentation of assault and battery at 300 block of N Third St (Hartsville). From the department's own incident record; no details beyond the offense, place and time.",
-   "story": [
-    {
-     "date": "2026-09-04T21:48",
-     "kind": "Police report",
-     "type": "agency",
-     "publisher": "Hartsville Police (CityProtect)",
-     "title": "Hartsville Police report 2026-09-141: Documentation of assault and battery",
-     "url": "https://www.cityprotect.com/map/list/incidents?fromDate=2026-09-04T01%3A48%3A00.000Z&toDate=2026-09-06T01%3A48%3A00.000Z&latitude=34.3793&longitude=-80.0686&zoomLevel=17"
-    }
-   ],
-   "n": 13
-  },
   {
    "id": "INC-AB938BA2DD",
    "category": "shooting",
@@ -566,7 +141,7 @@
      "url": "https://www.crimelocal.com/crime/291881011-7d8792bcc620bf673a3b68d49024f01f"
     }
    ],
-   "n": 14
+   "n": 1
   },
   {
    "id": "INC-0AB3EDC569",
@@ -597,7 +172,7 @@
      "url": "https://www.cityprotect.com/map/list/incidents?fromDate=2026-09-06T02%3A20%3A00.000Z&toDate=2026-09-08T02%3A20%3A00.000Z&latitude=34.3675&longitude=-80.0634&zoomLevel=17"
     }
    ],
-   "n": 15
+   "n": 2
   },
   {
    "id": "INC-04100B4DFE",
@@ -628,7 +203,7 @@
      "url": "https://www.cityprotect.com/map/list/incidents?fromDate=2026-09-06T20%3A20%3A00.000Z&toDate=2026-09-08T20%3A20%3A00.000Z&latitude=34.3798&longitude=-80.0477&zoomLevel=17"
     }
    ],
-   "n": 16
+   "n": 3
   },
   {
    "id": "INC-9C52B20C68",
@@ -668,7 +243,7 @@
      "url": "https://www.crimelocal.com/crime/292467350-092143f95fbbee744d1ecd5369c63a82"
     }
    ],
-   "n": 17
+   "n": 4
   },
   {
    "id": "INC-354FADF702",
@@ -713,12 +288,12 @@
      "date": "2026-09-14T17:08",
      "kind": "First report",
      "type": "news",
-     "publisher": "WMBF",
+     "publisher": "WMBF News",
      "title": "Woman charged following stabbing in Florence County",
      "url": "https://www.wmbfnews.com/2026/09/14/woman-charged-following-stabbing-florence-county/"
     }
    ],
-   "n": 18
+   "n": 5
   },
   {
    "id": "INC-DD227C1A57",
@@ -750,7 +325,7 @@
      "url": "https://www.crimelocal.com/crime/292487443-00afcb272b6109cac146897ca93c3167"
     }
    ],
-   "n": 19
+   "n": 6
   },
   {
    "id": "INC-724745239F",
@@ -794,7 +369,7 @@
      "date": "2026-09-10T15:40",
      "kind": "First report",
      "type": "news",
-     "publisher": "WMBF",
+     "publisher": "WMBF News",
      "title": "Deputies identify person of interest in deadly Florence County store assault",
      "url": "https://www.wmbfnews.com/2026/09/10/person-interest-identified-florence-county/"
     },
@@ -829,13 +404,13 @@
      "type": "news",
      "publisher": "WPDE",
      "title": "Son 'wasn't up there to fight anyone' before deadly Timmonsville assault",
-     "url": "https://wpde.com/news/local/debra-hampton-brown-roosevelt-thomas-jr-son-wasnt-up-there-to-fight-anyone-before-deadly-timmonsville-assault-hot-spot-on-east-smith-street-peggy-graham-the-florence-county-sheriffs-office"
+     "url": "https://wpde.com/newsletter-daily/debra-hampton-brown-roosevelt-thomas-jr-son-wasnt-up-there-to-fight-anyone-before-deadly-timmonsville-assault-hot-spot-on-east-smith-street-peggy-graham-the-florence-county-sheriffs-office"
     },
     {
      "date": "2026-09-14T10:16",
      "kind": "Update",
      "type": "news",
-     "publisher": "WMBF",
+     "publisher": "WMBF News",
      "title": "Florence County deadly assault suspect turns himself in",
      "url": "https://www.wmbfnews.com/2026/09/14/florence-county-deadly-assault-suspect-turns-himself/"
     },
@@ -856,7 +431,7 @@
      "url": "https://www.wbtw.com/news/pee-dee/florence-county/suspect-in-deadly-assault-outside-florence-county-convenience-store-turns-himself-in/"
     }
    ],
-   "n": 20
+   "n": 7
   },
   {
    "id": "INC-61A944A9A9",
@@ -887,7 +462,7 @@
      "url": "https://www.crimelocal.com/crime/292538114-af80e092193b04e6aa3fa6665cda315c"
     }
    ],
-   "n": 21
+   "n": 8
   },
   {
    "id": "INC-6AC4EABEB7",
@@ -918,7 +493,7 @@
      "url": "https://www.crimelocal.com/crime/292691463-af26192d4e553ad658be741a00ada45e"
     }
    ],
-   "n": 22
+   "n": 9
   },
   {
    "id": "INC-7A6A4896DB",
@@ -952,7 +527,7 @@
      "date": "2026-09-14T11:14",
      "kind": "First report",
      "type": "news",
-     "publisher": "WMBF",
+     "publisher": "WMBF News",
      "title": "Police searching for suspects in 2 Florence armed robberies",
      "url": "https://www.wmbfnews.com/2026/09/14/police-searching-suspects-2-florence-armed-robberies/"
     },
@@ -969,12 +544,12 @@
      "date": "2026-09-18T16:02",
      "kind": "Update",
      "type": "news",
-     "publisher": "WMBF",
+     "publisher": "WMBF News",
      "title": "Man arrested facing armed robbery charges in Florence County",
      "url": "https://www.wmbfnews.com/2026/09/18/man-arrested-facing-armed-robbery-charges-florence-county/"
     }
    ],
-   "n": 23
+   "n": 10
   },
   {
    "id": "INC-633E04031A",
@@ -1008,7 +583,7 @@
      "date": "2026-09-14T11:14",
      "kind": "First report",
      "type": "news",
-     "publisher": "WMBF",
+     "publisher": "WMBF News",
      "title": "Police searching for suspects in 2 Florence armed robberies",
      "url": "https://www.wmbfnews.com/2026/09/14/police-searching-suspects-2-florence-armed-robberies/"
     },
@@ -1025,12 +600,12 @@
      "date": "2026-09-18T16:02",
      "kind": "Update",
      "type": "news",
-     "publisher": "WMBF",
+     "publisher": "WMBF News",
      "title": "Man arrested facing armed robbery charges in Florence County",
      "url": "https://www.wmbfnews.com/2026/09/18/man-arrested-facing-armed-robbery-charges-florence-county/"
     }
    ],
-   "n": 24
+   "n": 11
   },
   {
    "id": "INC-FFCBAE03A9",
@@ -1459,7 +1034,7 @@
      "url": "https://www.crimelocal.com/crime/292691827-0efffb9523f3f143f4e027b687e09342"
     }
    ],
-   "n": 25
+   "n": 12
   },
   {
    "id": "INC-69D22CE592",
@@ -1490,7 +1065,7 @@
      "url": "https://www.cityprotect.com/map/list/incidents?fromDate=2026-09-10T15%3A19%3A00.000Z&toDate=2026-09-12T15%3A19%3A00.000Z&latitude=34.3605&longitude=-80.0855&zoomLevel=17"
     }
    ],
-   "n": 26
+   "n": 13
   },
   {
    "id": "INC-F0B58476BA",
@@ -1518,10 +1093,10 @@
      "type": "agency",
      "publisher": "Hartsville Police (CityProtect)",
      "title": "Hartsville Police report 2026-09-468: Assault and battery 3rd",
-     "url": "https://www.cityprotect.com/map/list/incidents?fromDate=2026-09-10T18%3A00%3A00.000Z&toDate=2026-09-12T18%3A00%3A00.000Z&latitude=34.3409&longitude=-80.0955&zoomLevel=17"
+     "url": "https://www.cityprotect.com/map/list/incidents?fromDate=2026-09-10T18%3A00%3A00.000Z&toDate=2026-09-12T18%3A00%3A00.000Z&latitude=34.3413&longitude=-80.0953&zoomLevel=17"
     }
    ],
-   "n": 27
+   "n": 14
   },
   {
    "id": "INC-7BA7DA8D46",
@@ -1552,7 +1127,7 @@
      "url": "https://www.cityprotect.com/map/list/incidents?fromDate=2026-09-10T18%3A44%3A00.000Z&toDate=2026-09-12T18%3A44%3A00.000Z&latitude=34.3876&longitude=-80.0768&zoomLevel=17"
     }
    ],
-   "n": 28
+   "n": 15
   },
   {
    "id": "INC-3C14D0B244",
@@ -1583,7 +1158,7 @@
      "url": "https://www.crimelocal.com/crime/292769532-f20fd12641151a2ea429ce282cdbca4a"
     }
    ],
-   "n": 29
+   "n": 16
   },
   {
    "id": "INC-2FA11B014D",
@@ -1614,7 +1189,7 @@
      "url": "https://www.cityprotect.com/map/list/incidents?fromDate=2026-09-11T19%3A24%3A00.000Z&toDate=2026-09-13T19%3A24%3A00.000Z&latitude=34.3651&longitude=-80.0765&zoomLevel=17"
     }
    ],
-   "n": 30
+   "n": 17
   },
   {
    "id": "INC-79A62FC0F5",
@@ -1645,7 +1220,7 @@
      "url": "https://www.cityprotect.com/map/list/incidents?fromDate=2026-09-12T09%3A00%3A00.000Z&toDate=2026-09-14T09%3A00%3A00.000Z&latitude=34.3658&longitude=-80.0957&zoomLevel=17"
     }
    ],
-   "n": 31
+   "n": 18
   },
   {
    "id": "INC-C374CF4729",
@@ -1676,7 +1251,7 @@
      "url": "https://www.crimelocal.com/crime/292806037-428ee310d7cb37716b4a203206e1a38d"
     }
    ],
-   "n": 32
+   "n": 19
   },
   {
    "id": "INC-53ADECA9DF",
@@ -1708,7 +1283,7 @@
      "url": "https://www.crimelocal.com/crime/292826090-d7765160e592a383ebeb9b82ab1c7ace"
     }
    ],
-   "n": 33
+   "n": 20
   },
   {
    "id": "INC-951D9AD810",
@@ -1736,10 +1311,10 @@
      "type": "agency",
      "publisher": "Hartsville Police (CityProtect)",
      "title": "Hartsville Police report 2026-09-687: Assault and battery 3rd degree",
-     "url": "https://www.cityprotect.com/map/list/incidents?fromDate=2026-09-13T14%3A00%3A00.000Z&toDate=2026-09-15T14%3A00%3A00.000Z&latitude=34.3435&longitude=-80.1037&zoomLevel=17"
+     "url": "https://www.cityprotect.com/map/list/incidents?fromDate=2026-09-13T14%3A00%3A00.000Z&toDate=2026-09-15T14%3A00%3A00.000Z&latitude=34.3441&longitude=-80.1035&zoomLevel=17"
     }
    ],
-   "n": 34
+   "n": 21
   },
   {
    "id": "INC-0FBE4C0F2F",
@@ -1791,7 +1366,7 @@
      "url": "https://wpde.com/news/local/hartsville-school-teachers-aid-charged-with-assaulting-student-placed-on-leave-emma-toney-bay-road-elementary-school"
     }
    ],
-   "n": 35
+   "n": 22
   },
   {
    "id": "INC-49DDF37A1E",
@@ -1822,7 +1397,7 @@
      "url": "https://www.crimelocal.com/crime/292952747-39ea1d4b43d183282527ed366eaa711f"
     }
    ],
-   "n": 36
+   "n": 23
   },
   {
    "id": "INC-D338EC19E2",
@@ -1881,7 +1456,7 @@
      "date": "2026-09-17T10:37",
      "kind": "Report",
      "type": "news",
-     "publisher": "WMBF",
+     "publisher": "WMBF News",
      "title": "3 injured in shooting at Darlington home, chief says",
      "url": "https://www.wmbfnews.com/2026/09/17/3-injured-shooting-darlington-home-chief-says/"
     },
@@ -1913,7 +1488,7 @@
      "date": "2026-09-20T17:15",
      "kind": "Update",
      "type": "news",
-     "publisher": "WMBF",
+     "publisher": "WMBF News",
      "title": "Coroner identifies victim in Darlington home shooting",
      "url": "https://www.wmbfnews.com/2026/09/20/coroner-identifies-victim-darlington-home-shooting/"
     },
@@ -1934,7 +1509,7 @@
      "url": "https://www.wfxb.com/2026/09/21/darlington-co-shooting-turns-fatal-after-20-year-old-dies/"
     }
    ],
-   "n": 37
+   "n": 24
   },
   {
    "id": "INC-798D6B03D8",
@@ -1962,10 +1537,10 @@
      "type": "agency",
      "publisher": "Hartsville Police (CityProtect)",
      "title": "Hartsville Police report 2026-09-677: Assault and battery 3rd",
-     "url": "https://www.cityprotect.com/map/list/incidents?fromDate=2026-09-16T09%3A55%3A00.000Z&toDate=2026-09-18T09%3A55%3A00.000Z&latitude=34.3672&longitude=-80.0638&zoomLevel=17"
+     "url": "https://www.cityprotect.com/map/list/incidents?fromDate=2026-09-16T09%3A55%3A00.000Z&toDate=2026-09-18T09%3A55%3A00.000Z&latitude=34.3668&longitude=-80.0624&zoomLevel=17"
     }
    ],
-   "n": 38
+   "n": 25
   },
   {
    "id": "INC-77F0FAB2DA",
@@ -1996,7 +1571,7 @@
      "url": "https://www.crimelocal.com/crime/293053382-0b718022eec787ef53af1b54adf9e20b"
     }
    ],
-   "n": 39
+   "n": 26
   },
   {
    "id": "INC-51103664CE",
@@ -2037,7 +1612,7 @@
      "url": "https://wpde.com/news/local/timmonsville-police-investigating-shooting-on-orange-street"
     }
    ],
-   "n": 40
+   "n": 27
   },
   {
    "id": "INC-7443A3D1AA",
@@ -2159,7 +1734,7 @@
      "date": "2026-09-24T15:42",
      "kind": "Report",
      "type": "news",
-     "publisher": "WMBF",
+     "publisher": "WMBF News",
      "title": "SLED investigates Florence County officer involved shooting",
      "url": "https://www.wmbfnews.com/2026/09/24/sled-investigates-florence-county-officer-involved-shooting/"
     },
@@ -2175,7 +1750,7 @@
      "date": "2026-09-25T14:30",
      "kind": "Update",
      "type": "news",
-     "publisher": "WMBF",
+     "publisher": "WMBF News",
      "title": "2 charged in Florence County officer involved shooting",
      "url": "https://www.wmbfnews.com/2026/09/25/2-charged-florence-county-officer-involved-shooting/"
     },
@@ -2188,15 +1763,15 @@
      "url": "https://www.wfxb.com/2026/09/25/sled-investigating-officer-involved-shooting-in-florence-co/"
     },
     {
-     "date": "2026-09-25T16:25",
+     "date": "2026-09-25T17:22",
      "kind": "Update",
      "type": "news",
      "publisher": "WBTW",
-     "title": "2 suspects face slew of charges after Florence County pursuit that led to deputy firing weapon",
+     "title": "2 suspects face slew of charges after florence county pursuit that led to deputy firing weapon",
      "url": "https://www.wbtw.com/news/pee-dee/florence-county/2-suspects-face-slew-of-charges-after-florence-county-pursuit-that-led-to-deputy-firing-weapon/"
     }
    ],
-   "n": 41
+   "n": 28
   },
   {
    "id": "INC-9FB03F44A4",
@@ -2224,10 +1799,10 @@
      "type": "agency",
      "publisher": "Hartsville Police (CityProtect)",
      "title": "Hartsville Police report 2026-09-780: Assault and battery 3rd degree",
-     "url": "https://www.cityprotect.com/map/list/incidents?fromDate=2026-09-19T05%3A20%3A00.000Z&toDate=2026-09-21T05%3A20%3A00.000Z&latitude=34.3674&longitude=-80.0702&zoomLevel=17"
+     "url": "https://www.cityprotect.com/map/list/incidents?fromDate=2026-09-19T05%3A20%3A00.000Z&toDate=2026-09-21T05%3A20%3A00.000Z&latitude=34.3669&longitude=-80.0707&zoomLevel=17"
     }
    ],
-   "n": 42
+   "n": 29
   },
   {
    "id": "INC-CB2180C27C",
@@ -2259,7 +1834,7 @@
      "url": "https://www.crimelocal.com/crime/293197897-4ee756087b615fe7a351947f23bfe2a2"
     }
    ],
-   "n": 43
+   "n": 30
   },
   {
    "id": "INC-D23CF2CFF7",
@@ -2279,13 +1854,14 @@
    "timePrecision": "range",
    "kind": "range",
    "endDate": "2026-09-23",
-   "summary": "A 75-year-old woman was found dead in her home in the 1600 block of Sharon Road in the Florence area during a family-requested welfare check on the afternoon of Sept 23; the coroner said it was a deadly shooting. A witness last saw her Sunday, Sept 20. Deputies obtained warrants charging her 21-year-old grandson with murder and six other offenses (allegations); he had not been arrested as of Sept 25.",
+   "summary": "A 75-year-old woman was found dead in her home in the 1600 block of Sharon Road in the Florence area during a family-requested welfare check on the afternoon of Sept 23; the coroner said it was a deadly shooting. Deputies say her 21-year-old grandson forced his way into the home and shot her on or around Sept 22, then sent himself about $3,500 from her Cash App account (allegations). He was arrested Sept 28 after a chase on I-95 that ended in Dillon County, is charged with murder, burglary, a weapons offense and three financial offenses, and was denied bond Sept 29.",
+   "arrest": "supported",
    "people": [
     {
      "role": "suspect",
      "age": 21,
      "sex": "M",
-     "outcome": "wanted (warrants issued)"
+     "outcome": "charged; bond denied"
     },
     {
      "role": "victim",
@@ -2296,18 +1872,10 @@
    ],
    "story": [
     {
-     "date": "2026-09-25T10:01",
-     "kind": "Report",
-     "type": "news",
-     "publisher": "WBTW",
-     "title": "Florence County woman found dead inside home after welfare check, coroner says",
-     "url": "https://www.wbtw.com/news/pee-dee/florence-county/florence-county-woman-found-dead-inside-home-after-welfare-check-coroner-says/"
-    },
-    {
      "date": "2026-09-25T10:05",
      "kind": "First report",
      "type": "news",
-     "publisher": "WMBF",
+     "publisher": "WMBF News",
      "title": "Deputies investigating deadly Florence County shooting",
      "url": "https://www.wmbfnews.com/2026/09/25/deputies-investigating-deadly-florence-county-shooting/"
     },
@@ -2320,12 +1888,53 @@
      "url": "https://wpde.com/news/local/death-investigation-leads-to-homicide-in-florence-county-tommy-sullivan-isaiah-alexander-hunter-financial-transaction-murder-charge-09242026"
     },
     {
+     "date": "2026-09-25T12:13",
+     "kind": "Report",
+     "type": "news",
+     "publisher": "WBTW",
+     "title": "florence county woman found dead inside home after welfare check coroner says",
+     "url": "https://www.wbtw.com/news/pee-dee/florence-county/florence-county-woman-found-dead-inside-home-after-welfare-check-coroner-says/"
+    },
+    {
      "date": "2026-09-25T19:35",
      "kind": "Update",
      "type": "news",
      "publisher": "WPDE",
      "title": "Deputies charge Florence County man in murder of his grandmother",
-     "url": "https://wpde.com/news/local/deputies-charge-florence-county-man-in-murder-of-his-grandmother-family-crime-investigation-police-sharon-road"
+     "url": "https://wpde.com/newsletter-daily/deputies-charge-florence-county-man-in-murder-of-his-grandmother-family-crime-investigation-police-sharon-road"
+    },
+    {
+     "date": "2026-09-28T12:15",
+     "kind": "Update",
+     "type": "news",
+     "publisher": "WMBF",
+     "title": "Deputies: Man killed grandmother in Florence County then used her Cash App",
+     "url": "https://www.wmbfnews.com/2026/09/28/man-accused-killing-grandmother-florence-county-arrested-after-chase-deputies-say/"
+    },
+    {
+     "date": "2026-09-28T17:53",
+     "type": "arrest",
+     "kind": "Arrest record",
+     "title": "Florence County booking: Murder; Poss. weapon during violent crime; Financial id fraud; and 8 more",
+     "note": "Charges are allegations, not findings of guilt",
+     "publisher": "County jail roster",
+     "url": null
+    },
+    {
+     "date": "2026-09-29T11:28",
+     "kind": "Update",
+     "type": "news",
+     "publisher": "WBTW",
+     "title": "Dillon man charged in grandmother's Florence County killing denied bond",
+     "url": "https://www.wbtw.com/news/pee-dee/florence-county/dillon-man-charged-in-grandmothers-florence-county-killing-denied-bond/"
+    },
+    {
+     "date": "2026-09-29T12:16",
+     "kind": "Update",
+     "type": "news",
+     "publisher": "WPDE",
+     "title": "'Child of God': Man accused of killing grandmother in Florence Co. denied bond",
+     "url": "https://wpde.com/news/local/bond-denied-for-man-accused-of-killing-grandmother-in-florence-county-isaiah-alexander-hunter-lorestine-hunter-i-95-09292026"
     },
     {
      "date": "found dead by de",
@@ -2336,7 +1945,7 @@
      "url": "https://www.postandcourier.com/pee-dee/news/florence-sc-homicide-investigation-woman-dead/article_183ef7e8-8214-46eb-9121-c111d29be05d.html"
     }
    ],
-   "n": 44
+   "n": 31
   },
   {
    "id": "INC-23377BA4C7",
@@ -2368,7 +1977,7 @@
      "url": "https://www.crimelocal.com/crime/293210390-1e1191211b2bac1356a00fe16f6df9a8"
     }
    ],
-   "n": 45
+   "n": 32
   },
   {
    "id": "INC-EC656649F5",
@@ -2396,10 +2005,10 @@
      "type": "agency",
      "publisher": "Hartsville Police (CityProtect)",
      "title": "Hartsville Police report 2026-09-814: Domestic violence 2nd",
-     "url": "https://www.cityprotect.com/map/list/incidents?fromDate=2026-09-20T06%3A30%3A00.000Z&toDate=2026-09-22T06%3A30%3A00.000Z&latitude=34.3746&longitude=-80.0753&zoomLevel=17"
+     "url": "https://www.cityprotect.com/map/list/incidents?fromDate=2026-09-20T06%3A30%3A00.000Z&toDate=2026-09-22T06%3A30%3A00.000Z&latitude=34.3756&longitude=-80.0765&zoomLevel=17"
     }
    ],
-   "n": 46
+   "n": 33
   },
   {
    "id": "INC-2F5F602036",
@@ -2427,10 +2036,10 @@
      "type": "agency",
      "publisher": "Hartsville Police (CityProtect)",
      "title": "Hartsville Police report 2026-09-868: Assault and battery",
-     "url": "https://www.cityprotect.com/map/list/incidents?fromDate=2026-09-22T03%3A40%3A00.000Z&toDate=2026-09-24T03%3A40%3A00.000Z&latitude=34.3485&longitude=-80.1043&zoomLevel=17"
+     "url": "https://www.cityprotect.com/map/list/incidents?fromDate=2026-09-22T03%3A40%3A00.000Z&toDate=2026-09-24T03%3A40%3A00.000Z&latitude=34.3495&longitude=-80.1039&zoomLevel=17"
     }
    ],
-   "n": 47
+   "n": 34
   },
   {
    "id": "INC-0AB9DF7FB6",
@@ -2458,10 +2067,10 @@
      "type": "agency",
      "publisher": "Hartsville Police (CityProtect)",
      "title": "Hartsville Police report 2026-09-887: Other",
-     "url": "https://www.cityprotect.com/map/list/incidents?fromDate=2026-09-22T18%3A00%3A00.000Z&toDate=2026-09-24T18%3A00%3A00.000Z&latitude=34.3664&longitude=-80.0872&zoomLevel=17"
+     "url": "https://www.cityprotect.com/map/list/incidents?fromDate=2026-09-22T18%3A00%3A00.000Z&toDate=2026-09-24T18%3A00%3A00.000Z&latitude=34.3664&longitude=-80.0876&zoomLevel=17"
     }
    ],
-   "n": 48
+   "n": 35
   },
   {
    "id": "INC-E399A48365",
@@ -2492,7 +2101,7 @@
      "url": "https://www.crimelocal.com/crime/293430364-0ced1aceb26042ff45492e517f53604b"
     }
    ],
-   "n": 49
+   "n": 36
   },
   {
    "id": "INC-E80F93C232",
@@ -2524,7 +2133,7 @@
      "url": "https://www.crimelocal.com/crime/293476861-d45673c40482d80c7762bf04402272aa"
     }
    ],
-   "n": 50
+   "n": 37
   },
   {
    "id": "INC-1F7429B301",
@@ -2552,10 +2161,10 @@
      "type": "agency",
      "publisher": "Hartsville Police (CityProtect)",
      "title": "Hartsville Police report 2026-09-939: Assault and battery",
-     "url": "https://www.cityprotect.com/map/list/incidents?fromDate=2026-09-23T17%3A25%3A00.000Z&toDate=2026-09-25T17%3A25%3A00.000Z&latitude=34.3921&longitude=-80.0754&zoomLevel=17"
+     "url": "https://www.cityprotect.com/map/list/incidents?fromDate=2026-09-23T17%3A25%3A00.000Z&toDate=2026-09-25T17%3A25%3A00.000Z&latitude=34.3921&longitude=-80.0765&zoomLevel=17"
     }
    ],
-   "n": 51
+   "n": 38
   },
   {
    "id": "INC-18B25EB38C",
@@ -2583,10 +2192,10 @@
      "type": "agency",
      "publisher": "Hartsville Police (CityProtect)",
      "title": "Hartsville Police report 2026-09-937: Making bomb threats",
-     "url": "https://www.cityprotect.com/map/list/incidents?fromDate=2026-09-23T22%3A40%3A00.000Z&toDate=2026-09-25T22%3A40%3A00.000Z&latitude=34.3707&longitude=-80.0693&zoomLevel=17"
+     "url": "https://www.cityprotect.com/map/list/incidents?fromDate=2026-09-23T22%3A40%3A00.000Z&toDate=2026-09-25T22%3A40%3A00.000Z&latitude=34.3695&longitude=-80.0687&zoomLevel=17"
     }
    ],
-   "n": 52
+   "n": 39
   },
   {
    "id": "INC-8E12139E97",
@@ -2616,7 +2225,7 @@
      "url": "https://wpde.com/news/local/deputies-investigating-incident-that-sent-woman-to-the-hospital-in-darlington-county"
     }
    ],
-   "n": 53
+   "n": 40
   },
   {
    "id": "INC-6B8AA18C2A",
@@ -2658,10 +2267,19 @@
      "url": null
     },
     {
+     "date": "2026-09-24T13:25",
+     "type": "arrest",
+     "kind": "Arrest record",
+     "title": "Florence City booking: Attempted murder; Poss. weapon during violent crime; Breach of peace, aggravated in nature",
+     "note": "Charges are allegations, not findings of guilt",
+     "publisher": "County jail roster",
+     "url": null
+    },
+    {
      "date": "2026-09-24T18:26",
      "kind": "Report",
      "type": "news",
-     "publisher": "WMBF",
+     "publisher": "WMBF News",
      "title": "Woman runs from officers, faces charges after Florence County shooting",
      "url": "https://www.wmbfnews.com/2026/09/24/woman-runs-officers-faces-charges-after-florence-county-shooting/"
     },
@@ -2690,7 +2308,7 @@
      "url": "https://www.wfxb.com/2026/09/25/woman-arrested-after-shots-fired-at-florence-apartment-complex/"
     }
    ],
-   "n": 54
+   "n": 41
   },
   {
    "id": "INC-A9623CF1C6",
@@ -2721,7 +2339,7 @@
      "url": "https://www.crimelocal.com/crime/293573952-4b0ecf58f281a94dade101fc505e23b3"
     }
    ],
-   "n": 55
+   "n": 42
   },
   {
    "id": "INC-946BFE0BB6",
@@ -2775,7 +2393,7 @@
      "type": "agency",
      "publisher": "Hartsville Police (CityProtect)",
      "title": "Hartsville Police report 2026-09-1032: Pointing firearm at another",
-     "url": "https://www.cityprotect.com/map/list/incidents?fromDate=2026-09-26T03%3A00%3A00.000Z&toDate=2026-09-28T03%3A00%3A00.000Z&latitude=34.3673&longitude=-80.0609&zoomLevel=17"
+     "url": "https://www.cityprotect.com/map/list/incidents?fromDate=2026-09-26T03%3A00%3A00.000Z&toDate=2026-09-28T03%3A00%3A00.000Z&latitude=34.3676&longitude=-80.0614&zoomLevel=17"
     },
     {
      "date": null,
@@ -2786,7 +2404,7 @@
      "url": "https://www.facebook.com/profile.php?id=100044309172302"
     }
    ],
-   "n": 56
+   "n": 43
   },
   {
    "id": "INC-6861E0F929",
@@ -2817,7 +2435,7 @@
      "url": "https://www.crimelocal.com/crime/293578103-ea457f5cb7116cc59277b50410b52730"
     }
    ],
-   "n": 57
+   "n": 44
   },
   {
    "id": "INC-ABE96288E0",
@@ -2849,7 +2467,7 @@
      "url": "https://www.crimelocal.com/crime/293579448-ed8043743a06d441d072b04b57b6027c"
     }
    ],
-   "n": 58
+   "n": 45
   },
   {
    "id": "INC-A875DC8026",
@@ -2877,10 +2495,10 @@
      "type": "agency",
      "publisher": "Hartsville Police (CityProtect)",
      "title": "Hartsville Police report 2026-09-1043: Assault and battery",
-     "url": "https://www.cityprotect.com/map/list/incidents?fromDate=2026-09-26T19%3A00%3A00.000Z&toDate=2026-09-28T19%3A00%3A00.000Z&latitude=34.3795&longitude=-80.0592&zoomLevel=17"
+     "url": "https://www.cityprotect.com/map/list/incidents?fromDate=2026-09-26T19%3A00%3A00.000Z&toDate=2026-09-28T19%3A00%3A00.000Z&latitude=34.3783&longitude=-80.0594&zoomLevel=17"
     }
    ],
-   "n": 59
+   "n": 46
   },
   {
    "id": "INC-91AE0882E7",
@@ -2912,7 +2530,7 @@
      "url": "https://www.crimelocal.com/crime/293610674-324b34c601d2c0b0f32dadfdf656a97b"
     }
    ],
-   "n": 60
+   "n": 47
   },
   {
    "id": "INC-517EBC0783",
@@ -2944,7 +2562,604 @@
      "url": "https://services.arcgis.com/euhFpEqKTbldowRv/arcgis/rest/services/PSInformCFS-SC_Florence_Co/FeatureServer/0"
     }
    ],
+   "n": 48
+  },
+  {
+   "id": "INC-B77A0B173D",
+   "category": "shooting",
+   "evidence": "call",
+   "class": "Gunfire reported, target unknown",
+   "fatal": false,
+   "county": "Florence",
+   "place": "1600 block of W Old No 4 Hwy",
+   "locationPrecision": "block",
+   "ringM": 161,
+   "placedBy": "county-block",
+   "lat": 33.9874,
+   "lon": -79.8172,
+   "date": "2026-09-28",
+   "timePrecision": "minute",
+   "kind": "call_received",
+   "time": "16:46",
+   "summary": "Florence County 911 call classified 'SHOOTING' at 1600 block of W Old No 4 Hwy (unincorporated Florence County). Dispatch record only; what happened is not confirmed.",
+   "uncertainty": "time is when the 911 call was received | dispatch record only; not confirmed",
+   "story": [
+    {
+     "date": "2026-09-28T16:46",
+     "kind": "911 call record",
+     "type": "dispatch",
+     "publisher": "Florence County 911 (via CrimeLocal)",
+     "title": "Shooting call: 1600 block of W Old No 4 Hwy",
+     "url": "https://www.crimelocal.com/crime/293679365-add7143f5d560d6bdee8a39b65b2e1b5"
+    }
+   ],
+   "n": 49
+  },
+  {
+   "id": "INC-1A9247E98D",
+   "category": "assault",
+   "evidence": "agency",
+   "class": "Directed violence reported",
+   "fatal": false,
+   "county": "Darlington",
+   "town": "Hartsville",
+   "place": "700 block of W Carolina Ave, Hartsville",
+   "locationPrecision": "block",
+   "ringM": 159,
+   "placedBy": "county-block",
+   "lat": 34.3679,
+   "lon": -80.0898,
+   "date": "2026-09-28",
+   "timePrecision": "minute",
+   "kind": "occurred",
+   "time": "17:13",
+   "summary": "Hartsville Police Department report 2026-09-1094: Fight at 700 block of W Carolina Ave (Hartsville). From the department's own incident record; no details beyond the offense, place and time.",
+   "story": [
+    {
+     "date": "2026-09-28T17:13",
+     "kind": "Police report",
+     "type": "agency",
+     "publisher": "Hartsville Police (CityProtect)",
+     "title": "Hartsville Police report 2026-09-1094: Fight",
+     "url": "https://www.cityprotect.com/map/list/incidents?fromDate=2026-09-27T21%3A13%3A00.000Z&toDate=2026-09-29T21%3A13%3A00.000Z&latitude=34.3674&longitude=-80.0897&zoomLevel=17"
+    }
+   ],
+   "n": 50
+  },
+  {
+   "id": "INC-C0756A74FF",
+   "category": "shooting",
+   "evidence": "call",
+   "class": "Gunfire reported, target unknown",
+   "fatal": false,
+   "county": "Florence",
+   "place": "4500 block of Justine Rd",
+   "locationPrecision": "block",
+   "ringM": 233,
+   "placedBy": "county-block",
+   "lat": 34.1626,
+   "lon": -79.65,
+   "date": "2026-09-29",
+   "timePrecision": "minute",
+   "kind": "call_received",
+   "time": "14:57",
+   "summary": "Florence County 911 call classified 'SHOOTING' at 4500 block of Justine Rd (unincorporated Florence County). Dispatch record only; what happened is not confirmed.",
+   "uncertainty": "time is when the 911 call was received | dispatch record only; not confirmed",
+   "story": [
+    {
+     "date": "2026-09-29T14:57",
+     "kind": "911 call record",
+     "type": "dispatch",
+     "publisher": "Florence County 911 (via CrimeLocal)",
+     "title": "Shooting call: 4500 block of Justine Rd",
+     "url": "https://www.crimelocal.com/crime/293737993-409ece451f72239a2080b62f4f647b76"
+    }
+   ],
+   "n": 51
+  },
+  {
+   "id": "INC-6F786C04FA",
+   "category": "assault",
+   "evidence": "agency",
+   "class": "Directed violence reported",
+   "fatal": false,
+   "county": "Darlington",
+   "town": "Hartsville",
+   "place": "400 block of S Fourth St, Hartsville",
+   "locationPrecision": "block",
+   "ringM": 90,
+   "placedBy": "county-block",
+   "lat": 34.3713,
+   "lon": -80.0687,
+   "date": "2026-09-29",
+   "timePrecision": "minute",
+   "kind": "occurred",
+   "time": "16:30",
+   "summary": "Hartsville Police Department report 2026-09-1101: Assault and battery 3rd degree at 400 block of S Fourth St (Hartsville). From the department's own incident record; no details beyond the offense, place and time.",
+   "story": [
+    {
+     "date": "2026-09-29T16:30",
+     "kind": "Police report",
+     "type": "agency",
+     "publisher": "Hartsville Police (CityProtect)",
+     "title": "Hartsville Police report 2026-09-1101: Assault and battery 3rd degree",
+     "url": "https://www.cityprotect.com/map/list/incidents?fromDate=2026-09-28T20%3A30%3A00.000Z&toDate=2026-09-30T20%3A30%3A00.000Z&latitude=34.3708&longitude=-80.0685&zoomLevel=17"
+    }
+   ],
+   "n": 52
+  },
+  {
+   "id": "INC-C446BAAFD8",
+   "category": "trauma",
+   "evidence": "call",
+   "class": "Possible violence, unresolved",
+   "fatal": false,
+   "county": "Florence",
+   "place": "4800 block of E Palmetto St",
+   "locationPrecision": "block",
+   "ringM": 90,
+   "placedBy": "county-block",
+   "lat": 34.1964,
+   "lon": -79.6547,
+   "date": "2026-09-29",
+   "timePrecision": "minute",
+   "kind": "call_received",
+   "time": "19:35",
+   "summary": "Florence County 911 call classified 'STAB/GUNSHOT/PENETRATING TRAUMA' at 4800 block of E Palmetto St (unincorporated Florence County). Dispatch record only; what happened is not confirmed.",
+   "uncertainty": "time is when the 911 call was received | dispatch record only; not confirmed",
+   "story": [
+    {
+     "date": "2026-09-29T19:35",
+     "kind": "911 call record",
+     "type": "dispatch",
+     "publisher": "Florence County 911 (via CrimeLocal)",
+     "title": "Shooting call: 4800 block of E Palmetto St",
+     "url": "https://www.crimelocal.com/crime/293740647-46d0bc2e0cdab50ed8062b487164c5f0"
+    }
+   ],
+   "n": 53
+  },
+  {
+   "id": "INC-1F2EB9B1B2",
+   "category": "assault",
+   "evidence": "agency",
+   "class": "Directed violence reported",
+   "fatal": false,
+   "county": "Darlington",
+   "town": "Hartsville",
+   "place": "1400 block of Fourteenth St, Hartsville",
+   "locationPrecision": "block",
+   "ringM": 213,
+   "placedBy": "county-block",
+   "lat": 34.3423,
+   "lon": -80.0984,
+   "date": "2026-09-30",
+   "timePrecision": "minute",
+   "kind": "occurred",
+   "time": "17:50",
+   "summary": "Hartsville Police Department report 2026-10-008: Assault and battery 3rd at 1400 block of Fourteenth St (Hartsville). From the department's own incident record; no details beyond the offense, place and time.",
+   "story": [
+    {
+     "date": "2026-09-30T17:50",
+     "kind": "Police report",
+     "type": "agency",
+     "publisher": "Hartsville Police (CityProtect)",
+     "title": "Hartsville Police report 2026-10-008: Assault and battery 3rd",
+     "url": "https://www.cityprotect.com/map/list/incidents?fromDate=2026-09-29T21%3A50%3A00.000Z&toDate=2026-10-01T21%3A50%3A00.000Z&latitude=34.3407&longitude=-80.0964&zoomLevel=17"
+    }
+   ],
+   "n": 54
+  },
+  {
+   "id": "INC-4026EAE82C",
+   "category": "shooting",
+   "evidence": "call",
+   "class": "Gunfire reported, target unknown",
+   "fatal": false,
+   "county": "Florence",
+   "place": "1700 block of Pisgah Rd",
+   "locationPrecision": "block",
+   "ringM": 90,
+   "placedBy": "census+centerline",
+   "lat": 34.2476,
+   "lon": -79.8004,
+   "date": "2026-10-01",
+   "timePrecision": "minute",
+   "kind": "call_received",
+   "time": "12:19",
+   "summary": "Florence County 911 call classified 'SHOOTING' at 1700 block of Pisgah Rd (unincorporated Florence County). Dispatch record only; what happened is not confirmed.",
+   "uncertainty": "time is when the 911 call was received | dispatch record only; not confirmed",
+   "story": [
+    {
+     "date": "2026-10-01T12:19",
+     "kind": "911 call record",
+     "type": "dispatch",
+     "publisher": "Florence County 911 (via CrimeLocal)",
+     "title": "Shooting call: 1700 block of Pisgah Rd",
+     "url": "https://www.crimelocal.com/crime/293861675-d840cba588541a930569cfefa9abd2f5"
+    }
+   ],
+   "n": 55
+  },
+  {
+   "id": "INC-ED48B69D41",
+   "category": "shooting",
+   "evidence": "call",
+   "class": "Gunfire reported, target unknown",
+   "fatal": false,
+   "county": "Florence",
+   "town": "Florence",
+   "place": "2600 block of W Palmetto St, Florence",
+   "locationPrecision": "block",
+   "ringM": 266,
+   "placedBy": "county-block",
+   "lat": 34.1787,
+   "lon": -79.8257,
+   "date": "2026-10-02",
+   "timePrecision": "minute",
+   "kind": "call_received",
+   "time": "01:56",
+   "summary": "Florence County 911 call classified 'SHOOTING' at 2600 block of W Palmetto St (Florence). Dispatch record only; what happened is not confirmed.",
+   "uncertainty": "time is when the 911 call was received | dispatch record only; not confirmed",
+   "story": [
+    {
+     "date": "2026-10-02T01:56",
+     "kind": "911 call record",
+     "type": "dispatch",
+     "publisher": "Florence County 911 (via CrimeLocal)",
+     "title": "Shooting call: 2600 block of W Palmetto St, Florence",
+     "url": "https://www.crimelocal.com/crime/293870958-d3ed0411218c9eafcc6ff3a884bc39d1"
+    }
+   ],
+   "n": 56
+  },
+  {
+   "id": "INC-4F37BF5E48",
+   "category": "threat",
+   "evidence": "agency",
+   "class": "Threat of violence reported",
+   "fatal": false,
+   "county": "Darlington",
+   "town": "Hartsville",
+   "place": "700 block of Lewellen Ave, Hartsville",
+   "locationPrecision": "block",
+   "ringM": 200,
+   "placedBy": "county-block",
+   "lat": 34.3616,
+   "lon": -80.0871,
+   "date": "2026-10-02",
+   "timePrecision": "minute",
+   "kind": "occurred",
+   "time": "18:38",
+   "summary": "Hartsville Police Department report 2026-10-070: Bomb threat at 700 block of Lewellen Ave (Hartsville). From the department's own incident record; no details beyond the offense, place and time.",
+   "story": [
+    {
+     "date": "2026-10-02T18:38",
+     "kind": "Police report",
+     "type": "agency",
+     "publisher": "Hartsville Police (CityProtect)",
+     "title": "Hartsville Police report 2026-10-070: Bomb threat",
+     "url": "https://www.cityprotect.com/map/list/incidents?fromDate=2026-10-01T22%3A38%3A00.000Z&toDate=2026-10-03T22%3A38%3A00.000Z&latitude=34.3594&longitude=-80.0860&zoomLevel=17"
+    }
+   ],
+   "n": 57
+  },
+  {
+   "id": "INC-921B427F55",
+   "category": "shooting",
+   "evidence": "call",
+   "class": "Gunfire reported, target unknown",
+   "fatal": false,
+   "county": "Florence",
+   "town": "Florence",
+   "place": "400 block of W Dixie St, Florence",
+   "locationPrecision": "block",
+   "ringM": 90,
+   "placedBy": "county-block",
+   "lat": 34.2045,
+   "lon": -79.7737,
+   "date": "2026-10-02",
+   "timePrecision": "minute",
+   "kind": "call_received",
+   "time": "19:59",
+   "summary": "Florence County 911 call classified 'SHOOTING' at 400 block of W Dixie St (Florence). Dispatch record only; what happened is not confirmed.",
+   "uncertainty": "time is when the 911 call was received | dispatch record only; not confirmed",
+   "story": [
+    {
+     "date": "2026-10-02T19:59",
+     "kind": "911 call record",
+     "type": "dispatch",
+     "publisher": "Florence County 911 (via CrimeLocal)",
+     "title": "Shooting call: 400 block of W Dixie St, Florence",
+     "url": "https://www.crimelocal.com/crime/293925116-9d0413f2d160cd78cb36a8f9c3f2c682"
+    }
+   ],
+   "n": 58
+  },
+  {
+   "id": "INC-51C8ADF696",
+   "category": "shooting",
+   "evidence": "call",
+   "class": "Gunfire reported, target unknown",
+   "fatal": false,
+   "county": "Florence",
+   "town": "Florence",
+   "place": "600 block of Lynch St, Florence",
+   "locationPrecision": "block",
+   "ringM": 90,
+   "placedBy": "county-block",
+   "lat": 34.2027,
+   "lon": -79.7554,
+   "date": "2026-10-03",
+   "timePrecision": "minute",
+   "kind": "call_received",
+   "time": "02:08",
+   "summary": "Florence County 911 call classified 'SHOOTING' at 600 block of Lynch St (Florence). Dispatch record only; what happened is not confirmed.",
+   "uncertainty": "time is when the 911 call was received | dispatch record only; not confirmed",
+   "story": [
+    {
+     "date": "2026-10-03T02:08",
+     "kind": "911 call record",
+     "type": "dispatch",
+     "publisher": "Florence County 911 (via CrimeLocal)",
+     "title": "Shooting call: 600 block of Lynch St, Florence",
+     "url": "https://www.crimelocal.com/crime/293931463-d156b4ed86b89d8ce24fd06466830910"
+    }
+   ],
+   "n": 59
+  },
+  {
+   "id": "INC-DDC82AB467",
+   "category": "assault",
+   "evidence": "agency",
+   "class": "Directed violence reported",
+   "fatal": false,
+   "county": "Darlington",
+   "town": "Hartsville",
+   "place": "1300 block of Heatley Dr, Hartsville",
+   "locationPrecision": "block",
+   "ringM": 103,
+   "placedBy": "county-block",
+   "lat": 34.3546,
+   "lon": -80.0749,
+   "date": "2026-10-03",
+   "timePrecision": "minute",
+   "kind": "occurred",
+   "time": "05:00",
+   "summary": "Hartsville Police Department report 2026-10-090: Assault and battery 2nd degree at 1300 block of Heatley Dr (Hartsville). From the department's own incident record; no details beyond the offense, place and time.",
+   "story": [
+    {
+     "date": "2026-10-03T05:00",
+     "kind": "Police report",
+     "type": "agency",
+     "publisher": "Hartsville Police (CityProtect)",
+     "title": "Hartsville Police report 2026-10-090: Assault and battery 2nd degree",
+     "url": "https://www.cityprotect.com/map/list/incidents?fromDate=2026-10-02T09%3A00%3A00.000Z&toDate=2026-10-04T09%3A00%3A00.000Z&latitude=34.3539&longitude=-80.0742&zoomLevel=17"
+    }
+   ],
+   "n": 60
+  },
+  {
+   "id": "INC-64D7F77A3B",
+   "category": "assault",
+   "evidence": "agency",
+   "class": "Directed violence reported",
+   "fatal": false,
+   "county": "Darlington",
+   "town": "Hartsville",
+   "place": "1100 block of S Fourth St, Hartsville",
+   "locationPrecision": "block",
+   "ringM": 296,
+   "placedBy": "county-block",
+   "lat": 34.3596,
+   "lon": -80.0612,
+   "date": "2026-10-03",
+   "timePrecision": "minute",
+   "kind": "occurred",
+   "time": "23:10",
+   "summary": "Hartsville Police Department report 2026-10-103: Assault and battery; 3rd degree at 1100 block of S Fourth St (Hartsville). From the department's own incident record; no details beyond the offense, place and time.",
+   "story": [
+    {
+     "date": "2026-10-03T23:10",
+     "kind": "Police report",
+     "type": "agency",
+     "publisher": "Hartsville Police (CityProtect)",
+     "title": "Hartsville Police report 2026-10-103: Assault and battery; 3rd degree",
+     "url": "https://www.cityprotect.com/map/list/incidents?fromDate=2026-10-03T03%3A10%3A00.000Z&toDate=2026-10-05T03%3A10%3A00.000Z&latitude=34.3587&longitude=-80.0606&zoomLevel=17"
+    }
+   ],
    "n": 61
+  },
+  {
+   "id": "INC-3E2719146B",
+   "category": "shooting",
+   "evidence": "call",
+   "class": "Gunfire reported, target unknown",
+   "fatal": false,
+   "county": "Florence",
+   "town": "Florence",
+   "place": "1500 block of Waverly Ave, Florence",
+   "locationPrecision": "block",
+   "ringM": 130,
+   "placedBy": "county-block",
+   "lat": 34.1969,
+   "lon": -79.7957,
+   "date": "2026-10-04",
+   "timePrecision": "minute",
+   "kind": "call_received",
+   "time": "00:12",
+   "summary": "Florence County 911 call classified 'SHOOTING' at 1500 block of Waverly Ave (Florence). Dispatch record only; what happened is not confirmed.",
+   "uncertainty": "time is when the 911 call was received | dispatch record only; not confirmed",
+   "story": [
+    {
+     "date": "2026-10-04T00:12",
+     "kind": "911 call record",
+     "type": "dispatch",
+     "publisher": "Florence County 911 (via CrimeLocal)",
+     "title": "Shooting call: 1500 block of Waverly Ave, Florence",
+     "url": "https://www.crimelocal.com/crime/293980412-16368aea9121c8629e975c4506cb17fb"
+    }
+   ],
+   "n": 62
+  },
+  {
+   "id": "INC-CB6E515FB2",
+   "category": "shooting",
+   "evidence": "call",
+   "class": "Gunfire reported, target unknown",
+   "fatal": false,
+   "county": "Florence",
+   "town": "Florence",
+   "place": "800 block of Waverly Ave, Florence",
+   "locationPrecision": "block",
+   "ringM": 135,
+   "placedBy": "county-block",
+   "lat": 34.1977,
+   "lon": -79.7811,
+   "date": "2026-10-04",
+   "timePrecision": "minute",
+   "kind": "call_received",
+   "time": "00:12",
+   "summary": "Florence County 911 call classified 'SHOOTING' at 800 block of Waverly Ave (Florence). Dispatch record only; what happened is not confirmed.",
+   "uncertainty": "time is when the 911 call was received | dispatch record only; not confirmed",
+   "story": [
+    {
+     "date": "2026-10-04T00:12",
+     "kind": "911 call record",
+     "type": "dispatch",
+     "publisher": "Florence County 911 (via CrimeLocal)",
+     "title": "Shooting call: 800 block of Waverly Ave, Florence",
+     "url": "https://www.crimelocal.com/crime/293980050-1182fdbb3ea4a6fa2aa33f83279146b6"
+    }
+   ],
+   "n": 63
+  },
+  {
+   "id": "INC-0B4BD09278",
+   "category": "shooting",
+   "evidence": "call",
+   "class": "Gunfire reported, target unknown",
+   "fatal": false,
+   "county": "Florence",
+   "town": "Florence",
+   "place": "1500 block of W Palmetto St, Florence",
+   "locationPrecision": "block",
+   "ringM": 172,
+   "placedBy": "county-block",
+   "lat": 34.1907,
+   "lon": -79.7958,
+   "date": "2026-10-04",
+   "timePrecision": "minute",
+   "kind": "call_received",
+   "time": "01:30",
+   "summary": "Florence County 911 call classified 'SHOOTING' at 1500 block of W Palmetto St (Florence). Dispatch record only; what happened is not confirmed.",
+   "uncertainty": "time is when the 911 call was received | dispatch record only; not confirmed",
+   "story": [
+    {
+     "date": "2026-10-04T01:30",
+     "kind": "911 call record",
+     "type": "dispatch",
+     "publisher": "Florence County 911 (via CrimeLocal)",
+     "title": "Shooting call: 1500 block of W Palmetto St, Florence",
+     "url": "https://www.crimelocal.com/crime/293981899-0c0c4ea7143249a72b2fc979bbe928d7"
+    }
+   ],
+   "n": 64
+  },
+  {
+   "id": "INC-9C17FF6BD5",
+   "category": "trauma",
+   "evidence": "call",
+   "class": "Possible violence, unresolved",
+   "fatal": false,
+   "county": "Florence",
+   "town": "Olanta",
+   "place": "200 block of N Jones Rd, Olanta",
+   "locationPrecision": "block",
+   "ringM": 90,
+   "placedBy": "county-block",
+   "lat": 33.9378,
+   "lon": -79.9337,
+   "date": "2026-10-04",
+   "timePrecision": "minute",
+   "kind": "call_received",
+   "time": "15:41",
+   "summary": "Florence County 911 call classified 'STAB/GUNSHOT/PENETRATING TRAUMA' at 200 block of N Jones Rd (Olanta). Dispatch record only; what happened is not confirmed.",
+   "uncertainty": "time is when the 911 call was received | dispatch record only; not confirmed",
+   "story": [
+    {
+     "date": "2026-10-04T15:41",
+     "kind": "911 call record",
+     "type": "dispatch",
+     "publisher": "Florence County 911 (via CrimeLocal)",
+     "title": "Shooting call: 200 block of N Jones Rd, Olanta",
+     "url": "https://www.crimelocal.com/crime/294020418-083c202c74bb98ab12d840d723eff44f"
+    }
+   ],
+   "n": 65
+  },
+  {
+   "id": "INC-C32BBAFF2E",
+   "category": "trauma",
+   "evidence": "call",
+   "class": "Possible violence, unresolved",
+   "fatal": false,
+   "county": "Florence",
+   "place": "3000 block of N Williston Rd",
+   "locationPrecision": "block",
+   "ringM": 90,
+   "placedBy": "county-block",
+   "lat": 34.2664,
+   "lon": -79.7025,
+   "date": "2026-10-04",
+   "timePrecision": "minute",
+   "kind": "call_received",
+   "time": "17:31",
+   "summary": "Florence County 911 call classified 'DOMESTIC' at 3000 block of N Williston Rd (unincorporated Florence County). Dispatch record only; what happened is not confirmed.",
+   "uncertainty": "time is when the 911 call was received | dispatch record only; not confirmed",
+   "story": [
+    {
+     "date": "2026-10-04T17:31",
+     "kind": "911 call record",
+     "type": "dispatch",
+     "publisher": "Florence County 911 live call map",
+     "title": "Domestic call: 3000 block of N Williston Rd",
+     "url": "https://services.arcgis.com/euhFpEqKTbldowRv/arcgis/rest/services/PSInformCFS-SC_Florence_Co/FeatureServer/0"
+    }
+   ],
+   "n": 66
+  },
+  {
+   "id": "INC-014B8D27CB",
+   "category": "trauma",
+   "evidence": "call",
+   "class": "Possible violence, unresolved",
+   "fatal": false,
+   "county": "Florence",
+   "town": "Scranton",
+   "place": "2200 block of Railroad Ave, Scranton",
+   "locationPrecision": "block",
+   "ringM": 90,
+   "placedBy": "county-block",
+   "lat": 33.9231,
+   "lon": -79.7448,
+   "date": "2026-10-04",
+   "timePrecision": "minute",
+   "kind": "call_received",
+   "time": "18:58",
+   "summary": "Florence County 911 call classified 'DOMESTIC' at 2200 block of Railroad Ave (Scranton). Dispatch record only; what happened is not confirmed.",
+   "uncertainty": "time is when the 911 call was received | dispatch record only; not confirmed",
+   "story": [
+    {
+     "date": "2026-10-04T18:58",
+     "kind": "911 call record",
+     "type": "dispatch",
+     "publisher": "Florence County 911 live call map",
+     "title": "Domestic call: 2200 block of Railroad Ave, Scranton",
+     "url": "https://services.arcgis.com/euhFpEqKTbldowRv/arcgis/rest/services/PSInformCFS-SC_Florence_Co/FeatureServer/0"
+    }
+   ],
+   "n": 67
   }
  ],
  "tips": [
@@ -3065,6 +3280,86 @@
    ]
   },
   {
+   "id": "INC-466E02840E",
+   "category": "shooting",
+   "evidence": "agency",
+   "class": "Directed violence reported",
+   "fatal": false,
+   "county": "Darlington",
+   "place": "1200 block of Una Rd, Darlington County",
+   "locationPrecision": "municipality",
+   "ringM": 3497,
+   "placedBy": "town-centre",
+   "lat": 34.3018,
+   "lon": -79.865,
+   "date": "2026-06-25",
+   "timePrecision": "day",
+   "kind": "occurred",
+   "summary": "Older case, arrest in window: a home in the 1200 block of Una Road in Darlington County was fired at on three separate occasions on June 25. Deputies arrested a man related to the victim after a search warrant on Sept 25 and charged him with three counts of attempted murder and three counts of discharging a firearm into a dwelling, plus weapons and drug charges (allegations); bond was denied.",
+   "uncertainty": "window: occurred before window start",
+   "arrest": "supported",
+   "people": [
+    {
+     "role": "arrestee",
+     "outcome": "charged; bond denied"
+    }
+   ],
+   "story": [
+    {
+     "date": "2026-09-25T07:26",
+     "type": "arrest",
+     "kind": "Arrest record",
+     "title": "Darlington booking: Discharging firearms into a dwelling; Attempted murder; Poss firearm by convicted violent felon; and 3 more",
+     "note": "Charges are allegations, not findings of guilt",
+     "publisher": "County jail roster",
+     "url": null
+    },
+    {
+     "date": "2026-09-28T13:00",
+     "kind": "Update",
+     "type": "news",
+     "publisher": "WBTW",
+     "title": "Darlington County search warrant leads to man's arrest on attempted murder, weapons charges",
+     "url": "https://www.wbtw.com/news/pee-dee/darlington-county/darlington-county-search-warrant-leads-to-mans-arrest-on-attempted-murder-weapons-charges/"
+    },
+    {
+     "date": "2026-09-28T13:04",
+     "kind": "Update",
+     "type": "news",
+     "publisher": "WMBF",
+     "title": "Search warrant leads to attempted murder arrest in Darlington County",
+     "url": "https://www.wmbfnews.com/2026/09/28/search-warrant-leads-attempted-murder-arrest-darlington-county/"
+    }
+   ],
+   "updatesInWindow": [
+    {
+     "date": "2026-09-25T07:26",
+     "type": "arrest",
+     "kind": "Arrest record",
+     "title": "Darlington booking: Discharging firearms into a dwelling; Attempted murder; Poss firearm by convicted violent felon; and 3 more",
+     "note": "Charges are allegations, not findings of guilt",
+     "publisher": "County jail roster",
+     "url": null
+    },
+    {
+     "date": "2026-09-28T13:00",
+     "kind": "Update",
+     "type": "news",
+     "publisher": "WBTW",
+     "title": "Darlington County search warrant leads to man's arrest on attempted murder, weapons charges",
+     "url": "https://www.wbtw.com/news/pee-dee/darlington-county/darlington-county-search-warrant-leads-to-mans-arrest-on-attempted-murder-weapons-charges/"
+    },
+    {
+     "date": "2026-09-28T13:04",
+     "kind": "Update",
+     "type": "news",
+     "publisher": "WMBF",
+     "title": "Search warrant leads to attempted murder arrest in Darlington County",
+     "url": "https://www.wmbfnews.com/2026/09/28/search-warrant-leads-attempted-murder-arrest-darlington-county/"
+    }
+   ]
+  },
+  {
    "id": "INC-47BD28A580",
    "category": "shooting",
    "evidence": "agency",
@@ -3145,30 +3440,6 @@
    ],
    "updatesInWindow": [
     {
-     "date": "2026-09-04T18:00",
-     "kind": "Update",
-     "type": "news",
-     "publisher": "WMBF",
-     "title": "Shooting justified in Purple City death investigation in Darlington County",
-     "url": "https://www.wmbfnews.com/2026/09/04/shooting-justified-purple-city-death-investigation-darlington-county/"
-    },
-    {
-     "date": "2026-09-04T21:45",
-     "kind": "Update",
-     "type": "news",
-     "publisher": "WPDE",
-     "title": "Man killed by security guard in June shooting at Purple City Club",
-     "url": "https://wpde.com/news/local/man-killed-by-security-guard-in-june-shooting-at-purple-city-club"
-    },
-    {
-     "date": "2026-09-04T23:25",
-     "kind": "Update",
-     "type": "news",
-     "publisher": "WBTW",
-     "title": "security guard justified in deadly purple city shooting darlington county sheriff says",
-     "url": "https://www.wbtw.com/news/pee-dee/darlington-county/security-guard-justified-in-deadly-purple-city-shooting-darlington-county-sheriff-says/"
-    },
-    {
      "date": "2026-09-15T09:21",
      "kind": "Update",
      "type": "news",
@@ -3191,88 +3462,6 @@
      "publisher": "WPDE",
      "title": "Purple City club in Darlington Co. shuts down after court order for public nuisance",
      "url": "https://wpde.com/news/local/purple-city-club-in-darlington-co-shuts-down-after-court-order-for-public-nuisance-thursday-sheriff-august-sheriffs-office-disorderly-conduct-shooting-june-vehicles-assault-zae-kwon-washington-09152026"
-    }
-   ]
-  },
-  {
-   "id": "INC-5962A3DC36",
-   "category": "assault",
-   "evidence": "agency",
-   "class": "Directed violence reported",
-   "fatal": false,
-   "county": "Darlington",
-   "place": "Hartsville area, Darlington County",
-   "locationPrecision": "municipality",
-   "ringM": 4000,
-   "placedBy": "town-centre",
-   "lat": 34.3709,
-   "lon": -80.0878,
-   "summary": "Older case, arrest in window: a Hartsville-area man was arrested Aug 31 on a charge of third-degree criminal sexual conduct with a minor for allegedly assaulting a juvenile while riding a four-wheeler; deputies first responded to the call on June 25 (allegation).",
-   "uncertainty": "window: latest possible occurrence is before the window | county medium: Darlington County Sheriff's Office case; exact location not reported.",
-   "arrest": "supported",
-   "people": [
-    {
-     "role": "arrestee",
-     "outcome": "charged"
-    },
-    {
-     "role": "victim",
-     "juvenile": true,
-     "outcome": "unknown"
-    }
-   ],
-   "story": [
-    {
-     "date": "2026-08-31T09:52",
-     "type": "arrest",
-     "kind": "Arrest record",
-     "title": "Darlington booking: Csc with minor 3rd,lewd act victim<16actor>14",
-     "note": "Charges are allegations, not findings of guilt",
-     "publisher": "County jail roster",
-     "url": null
-    },
-    {
-     "date": "2026-09-01T16:10",
-     "kind": "Update",
-     "type": "news",
-     "publisher": "WPDE",
-     "title": "Darlington County man arrested for criminal sexual conduct with minor",
-     "url": "https://wpde.com/news/local/darlington-county-man-arrested-for-criminal-sexual-conduct-with-minor"
-    },
-    {
-     "date": "2026-09-02T08:28",
-     "kind": "Update",
-     "type": "news",
-     "publisher": "WBTW",
-     "title": "man accused of assaulting juvenile while riding 4 wheeler in darlington county",
-     "url": "https://www.wbtw.com/news/pee-dee/darlington-county/man-accused-of-assaulting-juvenile-while-riding-4-wheeler-in-darlington-county/"
-    }
-   ],
-   "updatesInWindow": [
-    {
-     "date": "2026-08-31T09:52",
-     "type": "arrest",
-     "kind": "Arrest record",
-     "title": "Darlington booking: Csc with minor 3rd,lewd act victim<16actor>14",
-     "note": "Charges are allegations, not findings of guilt",
-     "publisher": "County jail roster",
-     "url": null
-    },
-    {
-     "date": "2026-09-01T16:10",
-     "kind": "Update",
-     "type": "news",
-     "publisher": "WPDE",
-     "title": "Darlington County man arrested for criminal sexual conduct with minor",
-     "url": "https://wpde.com/news/local/darlington-county-man-arrested-for-criminal-sexual-conduct-with-minor"
-    },
-    {
-     "date": "2026-09-02T08:28",
-     "kind": "Update",
-     "type": "news",
-     "publisher": "WBTW",
-     "title": "man accused of assaulting juvenile while riding 4 wheeler in darlington county",
-     "url": "https://www.wbtw.com/news/pee-dee/darlington-county/man-accused-of-assaulting-juvenile-while-riding-4-wheeler-in-darlington-county/"
     }
    ]
   },
@@ -3318,7 +3507,7 @@
      "date": "2026-09-22T12:15",
      "kind": "Update",
      "type": "news",
-     "publisher": "WMBF",
+     "publisher": "WMBF News",
      "title": "Man pleads guilty in death of Lake City officer deploying spike strips",
      "url": "https://www.wmbfnews.com/2026/09/22/man-pleads-guilty-hitting-killing-lake-city-police-officer-during-chase/"
     }
@@ -3344,7 +3533,7 @@
      "date": "2026-09-22T12:15",
      "kind": "Update",
      "type": "news",
-     "publisher": "WMBF",
+     "publisher": "WMBF News",
      "title": "Man pleads guilty in death of Lake City officer deploying spike strips",
      "url": "https://www.wmbfnews.com/2026/09/22/man-pleads-guilty-hitting-killing-lake-city-police-officer-during-chase/"
     }
@@ -3392,7 +3581,7 @@
      "date": "2026-09-14T17:40",
      "kind": "Update",
      "type": "news",
-     "publisher": "WMBF",
+     "publisher": "WMBF News",
      "title": "2 arrested, including man found in New Jersey, in connection with deadly Timmonsville shooting",
      "url": "https://www.wmbfnews.com/2026/09/14/2-arrested-including-man-found-new-jersey-connection-with-deadly-timmonsville-shooting/"
     },
@@ -3419,7 +3608,7 @@
      "date": "2026-09-14T17:40",
      "kind": "Update",
      "type": "news",
-     "publisher": "WMBF",
+     "publisher": "WMBF News",
      "title": "2 arrested, including man found in New Jersey, in connection with deadly Timmonsville shooting",
      "url": "https://www.wmbfnews.com/2026/09/14/2-arrested-including-man-found-new-jersey-connection-with-deadly-timmonsville-shooting/"
     },
@@ -3500,10 +3689,15 @@
    "date": "2026-08-28",
    "timePrecision": "part_of_day",
    "kind": "occurred",
-   "summary": "Older case, arrest in window: a 15-year-old was shot and killed at the Suburban Motel on West Lucas Street near I-95 on the evening of Aug 28 (the day before the window). Deputies charged a 22-year-old with murder on Aug 31 (allegation); a magistrate denied him bond on Sept 1.",
+   "summary": "Older case, arrests in window: a 15-year-old was shot and killed at the Suburban Motel on West Lucas Street near I-95 on the evening of Aug 28. Deputies charged a 22-year-old with murder on Aug 31 (a magistrate denied him bond Sept 1) and a 19-year-old with murder on Sept 29; both are accused of entering a motel room and shooting the teen (allegations). The sheriff's office said more arrests are possible.",
    "uncertainty": "window: occurred before window start",
    "arrest": "supported",
    "people": [
+    {
+     "role": "arrestee",
+     "age": 19,
+     "outcome": "charged"
+    },
     {
      "role": "arrestee",
      "age": 22,
@@ -3537,7 +3731,7 @@
      "date": "2026-08-31T17:52",
      "kind": "Update",
      "type": "news",
-     "publisher": "WMBF",
+     "publisher": "WMBF News",
      "title": "1 arrested after 15-year-old shot, killed at Florence County motel",
      "url": "https://www.wmbfnews.com/2026/08/31/1-arrested-florence-county-shooting-investigation/"
     },
@@ -3573,49 +3767,74 @@
      "publisher": "WPDE",
      "title": "Bond denied for man charged in deadly shooting of 15-year-old at Florence motel",
      "url": "https://wpde.com/news/local/bond-denied-for-man-charged-in-deadly-shooting-of-15-year-old-at-florence-motel-tyrik-antwan-deandre-hicks-manblessin-brightwell-west-lucas-street-09012026"
+    },
+    {
+     "date": "2026-09-29T14:32",
+     "type": "arrest",
+     "kind": "Arrest record",
+     "title": "Florence City booking: Murder; Under sentence- city court",
+     "note": "Charges are allegations, not findings of guilt",
+     "publisher": "County jail roster",
+     "url": null
+    },
+    {
+     "date": "2026-09-29T16:12",
+     "kind": "Update",
+     "type": "news",
+     "publisher": "WBTW",
+     "title": "Second man arrested in deadly shooting of 15-year-old, Florence County Sheriff's Office says",
+     "url": "https://www.wbtw.com/news/pee-dee/florence/second-man-arrested-in-deadly-shooting-of-15-year-old-florence-county-sheriffs-office-says/"
+    },
+    {
+     "date": "2026-09-29T16:20",
+     "kind": "Update",
+     "type": "news",
+     "publisher": "WMBF",
+     "title": "Deputies make second arrest in deadly shooting of teen at Florence County motel",
+     "url": "https://www.wmbfnews.com/2026/09/29/deputies-make-second-arrest-deadly-shooting-teen-florence-county-motel/"
+    },
+    {
+     "date": "2026-09-29T16:31",
+     "kind": "Update",
+     "type": "news",
+     "publisher": "WPDE",
+     "title": "2nd suspect charged in murder of 15-year-old at Florence motel",
+     "url": "https://wpde.com/news/local/2nd-suspect-charged-in-murder-of-15-year-old-at-florence-motel"
     }
    ],
    "updatesInWindow": [
     {
-     "date": "2026-08-31T17:52",
-     "kind": "Update",
-     "type": "news",
-     "publisher": "WMBF",
-     "title": "1 arrested after 15-year-old shot, killed at Florence County motel",
-     "url": "https://www.wmbfnews.com/2026/08/31/1-arrested-florence-county-shooting-investigation/"
-    },
-    {
-     "date": "2026-08-31T18:45",
+     "date": "2026-09-29T14:32",
      "type": "arrest",
      "kind": "Arrest record",
-     "title": "Florence County booking: Murder; Violation of parole",
+     "title": "Florence City booking: Murder; Under sentence- city court",
      "note": "Charges are allegations, not findings of guilt",
      "publisher": "County jail roster",
      "url": null
     },
     {
-     "date": "2026-08-31T21:17",
-     "kind": "Update",
-     "type": "news",
-     "publisher": "WPDE",
-     "title": "22-year-old arrested in shooting death of 15-year-old at Florence motel",
-     "url": "https://wpde.com/news/local/22-year-old-arrested-in-shooting-death-of-15-year-old-at-florence-motel"
-    },
-    {
-     "date": "2026-09-01T11:40",
+     "date": "2026-09-29T16:12",
      "kind": "Update",
      "type": "news",
      "publisher": "WBTW",
-     "title": "15 year old identified as victim of florence area hotel shooting coroner says",
-     "url": "https://www.wbtw.com/news/pee-dee/florence-county/15-year-old-identified-as-victim-of-florence-area-hotel-shooting-coroner-says/"
+     "title": "Second man arrested in deadly shooting of 15-year-old, Florence County Sheriff's Office says",
+     "url": "https://www.wbtw.com/news/pee-dee/florence/second-man-arrested-in-deadly-shooting-of-15-year-old-florence-county-sheriffs-office-says/"
     },
     {
-     "date": "2026-09-02T08:17",
+     "date": "2026-09-29T16:20",
+     "kind": "Update",
+     "type": "news",
+     "publisher": "WMBF",
+     "title": "Deputies make second arrest in deadly shooting of teen at Florence County motel",
+     "url": "https://www.wmbfnews.com/2026/09/29/deputies-make-second-arrest-deadly-shooting-teen-florence-county-motel/"
+    },
+    {
+     "date": "2026-09-29T16:31",
      "kind": "Update",
      "type": "news",
      "publisher": "WPDE",
-     "title": "Bond denied for man charged in deadly shooting of 15-year-old at Florence motel",
-     "url": "https://wpde.com/news/local/bond-denied-for-man-charged-in-deadly-shooting-of-15-year-old-at-florence-motel-tyrik-antwan-deandre-hicks-manblessin-brightwell-west-lucas-street-09012026"
+     "title": "2nd suspect charged in murder of 15-year-old at Florence motel",
+     "url": "https://wpde.com/news/local/2nd-suspect-charged-in-murder-of-15-year-old-at-florence-motel"
     }
    ]
   }
@@ -3657,11 +3876,11 @@
      "url": "https://www.wmbfnews.com/2026/09/08/deputies-investigating-death-darlington-county/"
     },
     {
-     "date": "2026-09-08T08:02",
+     "date": "2026-09-08T08:26",
      "kind": "Report",
      "type": "news",
      "publisher": "WBTW",
-     "title": "Deputies conduct death investigation in Darlington area",
+     "title": "deputies conduct death investigation in darlington area",
      "url": "https://www.wbtw.com/news/pee-dee/darlington-county/deputies-conduct-death-investigation-in-darlington-area/"
     },
     {
@@ -3712,46 +3931,371 @@
      "url": "https://wpde.com/news/local/darlington-teacher-placed-on-leave-amid-investigation-into-allegations-involving-student-jl-cain-elementary-school"
     }
    ]
-  },
-  {
-   "id": "INC-019F02661F",
-   "category": "threat",
-   "evidence": "agency",
-   "class": "Threat of violence reported",
-   "fatal": false,
-   "county": "Florence",
-   "place": "Threat against Florence County Detention Center (Effingham); arrest attempt on Ben Gause Rd off Old Number 4 Hwy",
-   "locationPrecision": "intersection",
-   "ringM": 70,
-   "placedBy": "centerline-intersection",
-   "lat": 34.0406,
-   "lon": -79.7629,
-   "date": "2026-09-03",
-   "timePrecision": "unknown",
-   "kind": "discovered",
-   "summary": "Florence County deputies searched for a man accused of threatening to blow up the Florence County Detention Center after he ran into the woods as they tried to serve an arrest warrant at a home on Ben Gause Road off Old Number 4 Highway on Sept 3. When the threat was made was not reported.",
-   "uncertainty": "window: only a latest-possible date is known (e.g. discovery date)",
-   "story": [
-    {
-     "date": "2026-09-03T11:46",
-     "kind": "First report",
-     "type": "news",
-     "publisher": "WPDE",
-     "title": "Manhunt underway for man accused of threatening to blow up detention center, sheriff says",
-     "url": "https://wpde.com/news/local/manhunt-underway-for-man-accused-of-threatening-to-blow-up-detention-center-sheriff-says"
-    },
-    {
-     "date": "2026-09-03T12:10",
-     "kind": "Report",
-     "type": "news",
-     "publisher": "WMBF",
-     "title": "Manhunt underway for suspect who allegedly threatened to blow up Florence County jail",
-     "url": "https://www.wmbfnews.com/2026/09/03/manhunt-underway-suspect-who-allegedly-threatened-blow-up-florence-county-jail/"
-    }
-   ]
   }
  ],
  "arrests": [
+  {
+   "id": "ARR-fb349ae7ef",
+   "booked": "2026-10-04",
+   "offense": "2026-10-04",
+   "agency": "Florence County Sheriff",
+   "area": "Florence County",
+   "county": "Florence",
+   "jail": "Florence",
+   "kind": "weapon_during_violent_crime",
+   "label": "Assault with a weapon",
+   "charges": "Criminal domestic violenceof a high and aggravated nature; Poss. weapon during violent crime"
+  },
+  {
+   "id": "ARR-ec196aee45",
+   "booked": "2026-10-04",
+   "offense": "2026-10-04",
+   "agency": "Florence Police",
+   "area": "Florence",
+   "county": "Florence",
+   "jail": "Florence",
+   "kind": "firearm_discharge",
+   "label": "Shooting into a home, car or crowd",
+   "charges": "Discharging firearm in the city limits; Breach of peace, aggravated in nature"
+  },
+  {
+   "id": "ARR-b06267016d",
+   "booked": "2026-10-03",
+   "offense": "2026-10-03",
+   "agency": "Lake City Police",
+   "area": "Lake City",
+   "county": "Florence",
+   "jail": "Florence",
+   "kind": "assault",
+   "label": "Assault",
+   "charges": "Assault and battery third degree"
+  },
+  {
+   "id": "ARR-74a47bc139",
+   "booked": "2026-10-03",
+   "offense": "2026-10-03",
+   "agency": "Florence County Sheriff",
+   "area": "Florence County",
+   "county": "Florence",
+   "jail": "Florence",
+   "kind": "assault",
+   "label": "Assault",
+   "charges": "Assault and battery third degree"
+  },
+  {
+   "id": "ARR-dd6bb3295e",
+   "booked": "2026-10-03",
+   "offense": "2026-10-03",
+   "agency": "Florence Police",
+   "area": "Florence",
+   "county": "Florence",
+   "jail": "Florence",
+   "kind": "assault",
+   "label": "Assault",
+   "charges": "Assault and battery third degree; Public disorderly conduct"
+  },
+  {
+   "id": "ARR-cd1dac9015",
+   "booked": "2026-10-03",
+   "offense": "2026-10-03",
+   "agency": "Florence County Sheriff",
+   "area": "Florence County",
+   "county": "Florence",
+   "jail": "Florence",
+   "kind": "domestic_violence",
+   "label": "Domestic violence",
+   "charges": "Domestic violence, 1st degree"
+  },
+  {
+   "id": "ARR-1ae33b484d",
+   "booked": "2026-10-03",
+   "offense": "2026-10-03",
+   "agency": "Florence Police",
+   "area": "Florence",
+   "county": "Florence",
+   "jail": "Florence",
+   "kind": "assault",
+   "label": "Assault",
+   "charges": "Assault and battery third degree"
+  },
+  {
+   "id": "ARR-ccdf8e4e99",
+   "booked": "2026-10-03",
+   "offense": "2026-10-03",
+   "agency": "Hartsville Police",
+   "area": "Hartsville",
+   "county": "Darlington",
+   "jail": "Darlington",
+   "kind": "assault",
+   "label": "Assault",
+   "charges": "Assault and battery 2nd degree"
+  },
+  {
+   "id": "ARR-c0c1469c55",
+   "booked": "2026-10-03",
+   "offense": "2026-10-03",
+   "agency": "Lake City Police",
+   "area": "Lake City",
+   "county": "Florence",
+   "jail": "Florence",
+   "kind": "assault",
+   "label": "Assault",
+   "charges": "Resisting arrest; oppose; Warrant served-family court bench warrant"
+  },
+  {
+   "id": "ARR-967cd8cac5",
+   "booked": "2026-10-03",
+   "offense": "2026-10-03",
+   "agency": "Florence County Sheriff",
+   "area": "Florence County",
+   "county": "Florence",
+   "jail": "Florence",
+   "kind": "assault",
+   "label": "Assault",
+   "charges": "Assault and battery of a high and aggravated nature; Driving under suspension"
+  },
+  {
+   "id": "ARR-11d002cde1",
+   "booked": "2026-10-02",
+   "offense": "2026-10-02",
+   "agency": "Hartsville Police",
+   "area": "Hartsville",
+   "county": "Darlington",
+   "jail": "Darlington",
+   "kind": "domestic_violence",
+   "label": "Domestic violence",
+   "charges": "Malicious injury to personal property<$2000; Domestic/domestic violence, 1st degree"
+  },
+  {
+   "id": "ARR-2fd35d7232",
+   "booked": "2026-10-02",
+   "offense": "2026-10-02",
+   "agency": "Florence County Sheriff",
+   "area": "Florence County",
+   "county": "Florence",
+   "jail": "Florence",
+   "kind": "domestic_violence",
+   "label": "Domestic violence",
+   "charges": "Petit or simple larceny $2000 or less; Domestic violence, 2nd degree"
+  },
+  {
+   "id": "ARR-52da0cacc9",
+   "booked": "2026-10-02",
+   "offense": "2026-10-02",
+   "agency": "Florence County Sheriff",
+   "area": "Florence County",
+   "county": "Florence",
+   "jail": "Florence",
+   "kind": "assault",
+   "label": "Assault",
+   "charges": "Entering premises after warning or refusing to leave on request; Assault and battery third degree"
+  },
+  {
+   "id": "ARR-dde89661eb",
+   "booked": "2026-10-02",
+   "offense": "2026-10-02",
+   "agency": "Florence County Sheriff",
+   "area": "Florence County",
+   "county": "Florence",
+   "jail": "Florence",
+   "kind": "assault",
+   "label": "Assault",
+   "charges": "Assault and battery third degree"
+  },
+  {
+   "id": "ARR-c3db155482",
+   "booked": "2026-10-01",
+   "offense": "2026-10-01",
+   "agency": "Florence Police",
+   "area": "Florence",
+   "county": "Florence",
+   "jail": "Florence",
+   "kind": "domestic_violence",
+   "label": "Domestic violence",
+   "charges": "Domestic violence, 3rd degree; Petit or simple larceny $2000 or less"
+  },
+  {
+   "id": "ARR-968cf3b552",
+   "booked": "2026-10-01",
+   "offense": "2026-10-01",
+   "agency": "Lake City Police",
+   "area": "Lake City",
+   "county": "Florence",
+   "jail": "Florence",
+   "kind": "domestic_violence",
+   "label": "Domestic violence",
+   "charges": "Domestic violence, 2nd degree"
+  },
+  {
+   "id": "ARR-8fc5874b96",
+   "booked": "2026-10-01",
+   "offense": "2026-10-01",
+   "agency": "Florence Police",
+   "area": "Florence",
+   "county": "Florence",
+   "jail": "Florence",
+   "kind": "assault",
+   "label": "Assault",
+   "charges": "Assault and battery third degree"
+  },
+  {
+   "id": "ARR-8222e9a2d2",
+   "booked": "2026-10-01",
+   "offense": "2025-10-01",
+   "agency": "Darlington Police",
+   "area": "Darlington",
+   "county": "Darlington",
+   "jail": "Darlington",
+   "kind": "weapon_threat",
+   "label": "Threat with a weapon",
+   "charges": "Pointing and presenting firearms at aperson; Breach of peace, aggravated in nature"
+  },
+  {
+   "id": "ARR-44ff7b6560",
+   "booked": "2026-10-01",
+   "offense": "2025-10-22",
+   "agency": "Darlington County Sheriff",
+   "area": "Darlington County",
+   "county": "Darlington",
+   "jail": "Darlington",
+   "kind": "assault",
+   "label": "Assault",
+   "charges": "Assault and battery 2nd degree"
+  },
+  {
+   "id": "ARR-5772e3ac45",
+   "booked": "2026-09-30",
+   "offense": "2026-05-08",
+   "agency": "Florence County Sheriff",
+   "area": "Florence County",
+   "county": "Florence",
+   "jail": "Florence",
+   "kind": "assault",
+   "label": "Assault",
+   "charges": "Failure to stop for a blue light; Resisting arrest; oppose; Trafficking in cocaine; and 6 more"
+  },
+  {
+   "id": "ARR-a67212a1a6",
+   "booked": "2026-09-30",
+   "offense": "2026-09-30",
+   "agency": "Darlington Police",
+   "area": "Darlington",
+   "county": "Darlington",
+   "jail": "Darlington",
+   "kind": "assault",
+   "label": "Assault",
+   "charges": "Pointing and presenting firearms at aperson; Assault and battery 1st degree; Breach of peace, aggravated in nature"
+  },
+  {
+   "id": "ARR-ad9da55d62",
+   "booked": "2026-09-30",
+   "offense": "2026-09-30",
+   "agency": "Florence Police",
+   "area": "Florence",
+   "county": "Florence",
+   "jail": "Florence",
+   "kind": "weapon_threat",
+   "label": "Threat with a weapon",
+   "charges": "Pointing and presenting firearms at a person"
+  },
+  {
+   "id": "ARR-c0781ce404",
+   "booked": "2026-09-30",
+   "offense": "2026-09-30",
+   "agency": "Florence County Sheriff",
+   "area": "Florence County",
+   "county": "Florence",
+   "jail": "Florence",
+   "kind": "assault",
+   "label": "Assault",
+   "charges": "Assault and battery third degree"
+  },
+  {
+   "id": "ARR-b7b9ed8b15",
+   "booked": "2026-09-30",
+   "offense": "2026-09-30",
+   "agency": "Florence County Sheriff",
+   "area": "Florence County",
+   "county": "Florence",
+   "jail": "Florence",
+   "kind": "assault",
+   "label": "Assault",
+   "charges": "Assault and battery third degree"
+  },
+  {
+   "id": "ARR-361d4c65ba",
+   "booked": "2026-09-30",
+   "offense": "2026-09-30",
+   "agency": "Lake City Police",
+   "area": "Lake City",
+   "county": "Florence",
+   "jail": "Florence",
+   "kind": "assault",
+   "label": "Assault",
+   "charges": "Entering premises after warning or refusing to leave on request; Assault; Malicious injury to animals"
+  },
+  {
+   "id": "ARR-ed06362fe5",
+   "booked": "2026-09-30",
+   "offense": "2026-09-30",
+   "agency": "Hartsville Police",
+   "area": "Hartsville",
+   "county": "Darlington",
+   "jail": "Darlington",
+   "kind": "assault",
+   "label": "Assault",
+   "charges": "Burglary - first degree; Public disorderly conduct; Threatening life of public employee"
+  },
+  {
+   "id": "ARR-296d1f2726",
+   "booked": "2026-09-29",
+   "offense": "2026-09-29",
+   "agency": "Florence Police",
+   "area": "Florence",
+   "county": "Florence",
+   "jail": "Florence",
+   "kind": "homicide",
+   "label": "Murder or homicide",
+   "charges": "Murder; Under sentence- city court",
+   "incident": "INC-6441FE4307"
+  },
+  {
+   "id": "ARR-e3fa0cad0c",
+   "booked": "2026-09-29",
+   "offense": "2026-09-29",
+   "agency": "Hartsville Police",
+   "area": "Hartsville",
+   "county": "Darlington",
+   "jail": "Darlington",
+   "kind": "assault",
+   "label": "Assault",
+   "charges": "Assault and battery 3rd degree"
+  },
+  {
+   "id": "ARR-b266c2a1a6",
+   "booked": "2026-09-28",
+   "offense": "2026-09-28",
+   "agency": "Florence County Sheriff",
+   "area": "Florence County",
+   "county": "Florence",
+   "jail": "Florence",
+   "kind": "homicide",
+   "label": "Murder or homicide",
+   "charges": "Murder; Poss. weapon during violent crime; Financial id fraud; and 8 more",
+   "incident": "INC-D23CF2CFF7"
+  },
+  {
+   "id": "ARR-44c57cd745",
+   "booked": "2026-09-27",
+   "offense": "2026-09-27",
+   "agency": "Florence Police",
+   "area": "Florence",
+   "county": "Florence",
+   "jail": "Florence",
+   "kind": "assault",
+   "label": "Assault",
+   "charges": "Assault and battery first degree"
+  },
   {
    "id": "ARR-fec5c2b8e7",
    "booked": "2026-09-27",
@@ -3778,6 +4322,17 @@
   },
   {
    "id": "ARR-1df7ffbf54",
+   "booked": "2026-09-26",
+   "offense": "2026-09-26",
+   "agency": "Florence Police",
+   "area": "Florence",
+   "county": "Florence",
+   "jail": "Florence",
+   "kind": "sexual_assault",
+   "label": "Sexual offense"
+  },
+  {
+   "id": "ARR-d4f4d9a0af",
    "booked": "2026-09-26",
    "offense": "2026-09-26",
    "agency": "Florence Police",
@@ -3891,10 +4446,24 @@
    "jail": "Darlington",
    "kind": "attempted_homicide",
    "label": "Attempted murder",
-   "charges": "Discharging firearms into a dwelling; Attempted murder; Poss firearm by convicted violent felon; and 3 more"
+   "charges": "Discharging firearms into a dwelling; Attempted murder; Poss firearm by convicted violent felon; and 3 more",
+   "incident": "INC-466E02840E"
   },
   {
    "id": "ARR-2ac8b8334e",
+   "booked": "2026-09-24",
+   "offense": "2026-09-24",
+   "agency": "Florence Police",
+   "area": "Florence",
+   "county": "Florence",
+   "jail": "Florence",
+   "kind": "attempted_homicide",
+   "label": "Attempted murder",
+   "charges": "Attempted murder; Poss. weapon during violent crime; Breach of peace, aggravated in nature",
+   "incident": "INC-6B8AA18C2A"
+  },
+  {
+   "id": "ARR-7a50131f5c",
    "booked": "2026-09-24",
    "offense": "2026-09-24",
    "agency": "Florence Police",
@@ -4258,6 +4827,18 @@
   },
   {
    "id": "ARR-958766c930",
+   "booked": "2026-09-16",
+   "offense": "2026-09-16",
+   "agency": "Florence Police",
+   "area": "Florence",
+   "county": "Florence",
+   "jail": "Florence",
+   "kind": "domestic_violence",
+   "label": "Domestic violence",
+   "charges": "Domestic violence, 2nd degree"
+  },
+  {
+   "id": "ARR-15fa489fb8",
    "booked": "2026-09-16",
    "offense": "2026-09-16",
    "agency": "Florence Police",
@@ -4798,281 +5379,6 @@
    "kind": "domestic_violence",
    "label": "Domestic violence",
    "charges": "Domestic violence, 2nd degree"
-  },
-  {
-   "id": "ARR-901ffae22a",
-   "booked": "2026-09-04",
-   "offense": "2022-12-07",
-   "agency": "Darlington County Sheriff",
-   "area": "Darlington County",
-   "county": "Darlington",
-   "jail": "Darlington",
-   "kind": "weapon_during_violent_crime",
-   "label": "Assault with a weapon",
-   "charges": "Assault and battery 3rd degree; Malicious injury to personal property<$2000; Resisting arrest; and 4 more"
-  },
-  {
-   "id": "ARR-8e84600ad4",
-   "booked": "2026-09-04",
-   "offense": "2026-09-04",
-   "agency": "Florence County Sheriff",
-   "area": "Florence County",
-   "county": "Florence",
-   "jail": "Florence",
-   "kind": "weapon_threat",
-   "label": "Threat with a weapon",
-   "charges": "Pointing and presenting firearms at a person"
-  },
-  {
-   "id": "ARR-b68a566e12",
-   "booked": "2026-09-04",
-   "offense": "2026-09-04",
-   "agency": "Darlington County Sheriff",
-   "area": "Darlington County",
-   "county": "Darlington",
-   "jail": "Darlington",
-   "kind": "domestic_violence",
-   "label": "Domestic violence",
-   "charges": "Domestic/domestic violence, 3rd degree"
-  },
-  {
-   "id": "ARR-5ee31331c8",
-   "booked": "2026-09-04",
-   "offense": "2026-09-04",
-   "agency": "Florence Police",
-   "area": "Florence",
-   "county": "Florence",
-   "jail": "Florence",
-   "kind": "assault",
-   "label": "Assault",
-   "charges": "Assault and battery third degree; Domestic violence, 3rd degree"
-  },
-  {
-   "id": "ARR-032765a424",
-   "booked": "2026-09-03",
-   "offense": "2026-09-03",
-   "agency": "Florence County Sheriff",
-   "area": "Florence County",
-   "county": "Florence",
-   "jail": "Florence",
-   "kind": "domestic_violence",
-   "label": "Domestic violence",
-   "charges": "Domestic violence, 2nd degree"
-  },
-  {
-   "id": "ARR-00bd0f0dc9",
-   "booked": "2026-09-03",
-   "offense": "2026-09-03",
-   "agency": "Florence County Sheriff",
-   "area": "Florence County",
-   "county": "Florence",
-   "jail": "Florence",
-   "kind": "assault",
-   "label": "Assault",
-   "charges": "Failure to stop for a blue light; Poss. of 28g (1oz) or less of marijuana or 10g or less of hash - 1st offense; Transport a in motor vehicle with seal broken; and 5 more"
-  },
-  {
-   "id": "ARR-1833807884",
-   "booked": "2026-09-03",
-   "offense": "2026-09-03",
-   "agency": "Darlington County Sheriff",
-   "area": "Darlington County",
-   "county": "Darlington",
-   "jail": "Darlington",
-   "kind": "assault",
-   "label": "Assault",
-   "charges": "Assault and battery 3rd degree"
-  },
-  {
-   "id": "ARR-27cb350c94",
-   "booked": "2026-09-03",
-   "offense": "2026-09-03",
-   "agency": "Hartsville Police",
-   "area": "Hartsville",
-   "county": "Darlington",
-   "jail": "Darlington",
-   "kind": "weapon_threat",
-   "label": "Threat with a weapon",
-   "charges": "Pointing and presenting firearms at aperson"
-  },
-  {
-   "id": "ARR-8df6ee6005",
-   "booked": "2026-09-03",
-   "offense": "2026-09-03",
-   "agency": "SC Highway Patrol",
-   "county": "Florence",
-   "jail": "Florence",
-   "kind": "attempted_homicide",
-   "label": "Attempted murder",
-   "charges": "Attempted murder; Failure to stop for a blue light; Reckless driving; and 2 more"
-  },
-  {
-   "id": "ARR-69ca232f76",
-   "booked": "2026-09-02",
-   "offense": "2026-09-02",
-   "agency": "Florence County Sheriff",
-   "area": "Florence County",
-   "county": "Florence",
-   "jail": "Florence",
-   "kind": "assault",
-   "label": "Assault",
-   "charges": "Assault and battery third degree; Manuf."
-  },
-  {
-   "id": "ARR-f6e64daf19",
-   "booked": "2026-09-02",
-   "offense": "2026-09-02",
-   "agency": "Florence Police",
-   "area": "Florence",
-   "county": "Florence",
-   "jail": "Florence",
-   "kind": "assault",
-   "label": "Assault",
-   "charges": "Unauthorized soliciting for ride; Assault and battery third degree"
-  },
-  {
-   "id": "ARR-cc3585eec7",
-   "booked": "2026-09-01",
-   "offense": "2026-09-01",
-   "agency": "Florence Police",
-   "area": "Florence",
-   "county": "Florence",
-   "jail": "Florence",
-   "kind": "assault",
-   "label": "Assault",
-   "charges": "Assault and battery third degree"
-  },
-  {
-   "id": "ARR-16d967ff98",
-   "booked": "2026-09-01",
-   "offense": "2026-09-01",
-   "agency": "Lake City Police",
-   "area": "Lake City",
-   "county": "Florence",
-   "jail": "Florence",
-   "kind": "assault",
-   "label": "Assault",
-   "charges": "Assault and battery third degree"
-  },
-  {
-   "id": "ARR-b9c8adab12",
-   "booked": "2026-09-01",
-   "offense": "2026-09-01",
-   "agency": "Florence Police",
-   "area": "Florence",
-   "county": "Florence",
-   "jail": "Florence",
-   "kind": "attempted_homicide",
-   "label": "Attempted murder",
-   "charges": "Possession of firearm or ammunition by person convicted of certain crimes -- second offense; Poss. weapon during violent crime; Breach of peace, aggravated in nature; and 5 more"
-  },
-  {
-   "id": "ARR-2cc7d7162d",
-   "booked": "2026-09-01",
-   "offense": "2026-09-01",
-   "agency": "Florence County Sheriff",
-   "area": "Florence County",
-   "county": "Florence",
-   "jail": "Florence",
-   "kind": "assault",
-   "label": "Assault",
-   "charges": "Assault and battery third degree; Bondsman off bond"
-  },
-  {
-   "id": "ARR-a0267ab56c",
-   "booked": "2026-08-31",
-   "offense": "2026-08-31",
-   "agency": "Florence County Sheriff",
-   "area": "Florence County",
-   "county": "Florence",
-   "jail": "Florence",
-   "kind": "domestic_violence",
-   "label": "Domestic violence",
-   "charges": "Domestic violence, 1st degree; Warrant served-family court bench warrant; Malicious injury to animals"
-  },
-  {
-   "id": "ARR-10f5e9f418",
-   "booked": "2026-08-31",
-   "offense": "2026-08-31",
-   "agency": "Florence County Sheriff",
-   "area": "Florence County",
-   "county": "Florence",
-   "jail": "Florence",
-   "kind": "homicide",
-   "label": "Murder or homicide",
-   "charges": "Murder; Violation of parole",
-   "incident": "INC-6441FE4307"
-  },
-  {
-   "id": "ARR-325ce68d9c",
-   "booked": "2026-08-31",
-   "offense": "2026-08-31",
-   "agency": "Florence Police",
-   "area": "Florence",
-   "county": "Florence",
-   "jail": "Florence",
-   "kind": "domestic_violence",
-   "label": "Domestic violence",
-   "charges": "Domestic violence, 2nd degree"
-  },
-  {
-   "id": "ARR-f88e943be8",
-   "booked": "2026-08-31",
-   "offense": "2026-06-25",
-   "agency": "Darlington County Sheriff",
-   "area": "Darlington County",
-   "county": "Darlington",
-   "jail": "Darlington",
-   "kind": "sexual_assault",
-   "label": "Sexual offense",
-   "incident": "INC-5962A3DC36"
-  },
-  {
-   "id": "ARR-b888ffcee9",
-   "booked": "2026-08-31",
-   "offense": "2026-08-31",
-   "agency": "Florence Police",
-   "area": "Florence",
-   "county": "Florence",
-   "jail": "Florence",
-   "kind": "domestic_violence",
-   "label": "Domestic violence",
-   "charges": "Domestic violence, 2nd degree"
-  },
-  {
-   "id": "ARR-75abb3232d",
-   "booked": "2026-08-30",
-   "offense": "2026-08-30",
-   "agency": "Lake City Police",
-   "area": "Lake City",
-   "county": "Florence",
-   "jail": "Florence",
-   "kind": "assault",
-   "label": "Assault",
-   "charges": "Assault and battery third degree"
-  },
-  {
-   "id": "ARR-58501f366b",
-   "booked": "2026-08-30",
-   "offense": "2026-08-30",
-   "agency": "Lake City Police",
-   "area": "Lake City",
-   "county": "Florence",
-   "jail": "Florence",
-   "kind": "assault",
-   "label": "Assault",
-   "charges": "Malicious injury to animals; Assault and battery third degree; Warrant served-gsbw failure to appear"
-  },
-  {
-   "id": "ARR-c367fbbcee",
-   "booked": "2026-08-30",
-   "offense": "2026-08-30",
-   "agency": "Florence Police",
-   "area": "Florence",
-   "county": "Florence",
-   "jail": "Florence",
-   "kind": "sexual_assault",
-   "label": "Sexual offense"
   }
  ],
  "baseline": {
